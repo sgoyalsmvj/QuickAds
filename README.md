@@ -1,6 +1,6 @@
 # QuickAds
 
-This project is a Next.js with pages router application designed to display company performance metrics, ad spend, and testing volume using responsive charts and tables. The application is built with React, Tailwind CSS, and Chart.js.
+This project is a Next.js with pages router application designed to display company performance metrics, ad spend, and testing volume using responsive (for tablets and mobile devices) charts and tables. The application is built with React, Tailwind CSS, and Chart.js.
 
 ## Usage
 
