@@ -6,7 +6,6 @@ This project is a Next.js with pages router application designed to display comp
 
 This application displays company details, performance charts, and a videos table. The data for these components is sourced from JSON files located in the `datafiles` directory.
 
-
 ### CompanyDetails Component
 
 Displays detailed information about a company, including:
@@ -38,6 +37,9 @@ Displays a line chart visualizing performance metrics over time.
 
 Displays a bar chart showing comparative data.
 
+### DarkModeToggle Component
+
+A toggle switch that allows users to switch between light mode and dark mode. This feature enhances the user experience by providing a dark mode option for better readability in low-light environments.
 ## Data Files
 
 - **data1.json**: Contains company-specific data.
@@ -70,4 +72,4 @@ Displays a bar chart showing comparative data.
 - Chart.js
 - Next.js with Pages router
 
----
+
