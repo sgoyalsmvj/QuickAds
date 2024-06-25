@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegStar } from "react-icons/fa6";
 import { IoMdShare } from "react-icons/io";
 import { GoQuestion } from "react-icons/go";
+import { addCommasToNumber } from "./VideosTable";
 
 const CompanyDetails = ({ companyData }) => {
   // console.log(companyData);
@@ -54,7 +55,7 @@ const CompanyDetails = ({ companyData }) => {
             <h1 className="flex items-center justify-start">
               Ad spend 365 <GoQuestion />
             </h1>
-            <p className="font-bold">${companyData.data.company.spend.today}</p>
+            <p className="font-bold">${addCommasToNumber(companyData.data.company.spend.today)}</p>
           </div>
           <div className="border p-3 rounded-lg md:m-2 shadow">
             <h1 className="flex items-center justify-start">

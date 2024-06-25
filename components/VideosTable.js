@@ -2,8 +2,33 @@ import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { IoArrowForwardOutline } from "react-icons/io5";
 
+export function addCommasToNumber(number) {
+  // Convert number to string to handle commas
+  const numStr = number.toString();
+  
+  // Use regex to match digits in groups of 3 from the end
+  const regex = /\B(?=(\d{3})+(?!\d))/g;
+  
+  // Insert commas in appropriate places using replace method
+  return numStr.replace(regex, ',');
+}
+
 const VideosTable = ({ videosData }) => {
-  console.log(videosData);
+  function formatTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    const formattedHours = hours < 10 ? `0${hours}` : hours;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    const formattedSeconds =
+      remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+
+    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+  }
+
+
+  // console.log(videosData);
   return (
     <div className="p-5 overflow-x-auto">
       <table className="table-auto w-full rounded-lg  shadow-lg   ">
@@ -13,7 +38,7 @@ const VideosTable = ({ videosData }) => {
             <th className="px-2 py-1 md:px-4 md:py-2">Title</th>
             <th className="px-2 py-1 md:px-4 md:py-2">Brand</th>
             <th className="px-2 py-1 md:px-4 md:py-2">Total Ad Spend</th>
-            <th className="px-2 py-1 md:px-4 md:py-2">Ad Spend Last 30 Days</th>
+            <th className="px-2 py-1 md:px-4 md:py-2">Ad Spend 30</th>
             <th className="px-2 py-1 md:px-4 md:py-2">Publish Date</th>
             <th className="px-2 py-1 md:px-4 md:py-2">Duration</th>
           </tr>
@@ -35,16 +60,16 @@ const VideosTable = ({ videosData }) => {
                 {video.brandName}
               </td>
               <td className="   px-2 py-1 md:px-4 md:py-2">
-                ${video.totalSpend ? video.totalSpend : 0}
+                ${video.totalSpend ? addCommasToNumber(video.totalSpend) : 0}
               </td>
               <td className="   px-2 py-1 md:px-4 md:py-2">
-                ${video.last30Days ? video.last30Days : 0}
+                ${video.last30Days ? addCommasToNumber(video.last30Days) : 0}
               </td>
               <td className="   px-2 py-1 md:px-4 md:py-2">
                 {video.publishedAt.split("T")[0]}
               </td>
               <td className="   px-2 py-1 md:px-4 md:py-2">
-                {video.duration}s{" "}
+                {formatTime(video.duration)}
               </td>
             </tr>
           ))}
