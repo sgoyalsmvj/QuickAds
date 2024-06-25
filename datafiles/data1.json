@@ -1,0 +1,70 @@
+{
+    "data": {
+        "company": {
+            "companyId": 1283123,
+            "legalName": "YouTube, Inc.",
+            "countryId": 236,
+            "swiped": false,
+            "categoryId": 93,
+            "revenue": "15.15 billion",
+            "headquarters": "San Bruno California",
+            "yearFounded": "2005",
+            "spend": {
+                "today": 1897239983,
+                "last7Days": 7278635,
+                "last14Days": 14804915,
+                "last21Days": 24144813,
+                "last30Days": 35919121,
+                "last60Days": 82609926,
+                "last90Days": 126666082,
+                "last180Days": 288705224,
+                "last365Days": 931285598,
+                "last720Days": 1772934150,
+                "collected_on": "2024-06-23T14:03:48.204Z"
+            },
+            "numberOfEmployees": " 2600"
+        },
+        "ranks": {
+            "global": {
+                "rank": 3,
+                "change": 0
+            },
+            "country": {
+                "rank": 2,
+                "change": 0
+            },
+            "category": {
+                "rank": 1,
+                "change": 0
+            }
+        },
+        "creativeCount": 49245,
+        "top5Countries": [
+            {
+                "countryId": 236,
+                "count": 8480,
+                "percentage": 17.404511216468606
+            },
+            {
+                "countryId": 227,
+                "count": 5782,
+                "percentage": 11.867085360096874
+            },
+            {
+                "countryId": 176,
+                "count": 4187,
+                "percentage": 8.593477413131376
+            },
+            {
+                "countryId": 234,
+                "count": 4181,
+                "percentage": 8.581162900478214
+            },
+            {
+                "countryId": 0,
+                "count": 26093,
+                "percentage": 53.55376310982493
+            }
+        ]
+    }
+}
