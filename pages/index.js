@@ -5,6 +5,7 @@ import data2 from "../datafiles/data2.json";
 import LineChart from "@/components/LineChart";
 import BarChart from "@/components/BarChart";
 import { lineChartData, barChartData } from "../datafiles/graphsData";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 export const getStaticProps = async () => {
   return {
@@ -21,7 +22,8 @@ export const getStaticProps = async () => {
 
 export default function Home({ companyData, videosData }) {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col dark:bg-dark-background dark:text-dark-text">
+      
       <CompanyDetails companyData={companyData} />
       <h1 className="p-5 m-2 font-bold text-2xl">
         Performance and Testing Volume
