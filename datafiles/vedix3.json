@@ -1,0 +1,78 @@
+{
+    "data": {
+        "page": 1,
+        "hasMore": true,
+        "results": [
+            {
+                "ytVideoId": "V2ihPhKOI7I",
+                "brandId": 272863,
+                "title": "@Manisa and Shweta Experience Of Vedix | India's Only Customised Modern Ayurvedic HairCare Regimen",
+                "description": "",
+                "duration": 159,
+                "thumbnail": "https://i.ytimg.com/vi/V2ihPhKOI7I/default.jpg",
+                "category": "22",
+                "width": 1280,
+                "height": 720,
+                "publishedAt": "2021-09-15T12:59:58.000Z",
+                "totalSpend": "720493",
+                "last30Days": "0"
+            },
+            {
+                "ytVideoId": "XHBt4LUXRao",
+                "brandId": 272863,
+                "title": "@ Meghana’s Experience On Vedix   India's Only Customised Modern Ayurvedic Hair Care Regimen   V1H1",
+                "description": "",
+                "duration": 166,
+                "thumbnail": "https://i.ytimg.com/vi/XHBt4LUXRao/default.jpg",
+                "category": "22",
+                "width": 1280,
+                "height": 720,
+                "publishedAt": "2020-07-10T11:43:47.000Z",
+                "totalSpend": "600490",
+                "last30Days": "0"
+            },
+            {
+                "ytVideoId": "ggYD7juAG20",
+                "brandId": 272863,
+                "title": "## Shivangi's Review Of Vedix | India's Only Customised Modern Ayurvedic Hair Care Regimen",
+                "description": "Hindi",
+                "duration": 257,
+                "thumbnail": "https://i.ytimg.com/vi/ggYD7juAG20/default.jpg",
+                "category": "22",
+                "width": 1280,
+                "height": 720,
+                "publishedAt": "2021-04-21T12:18:29.000Z",
+                "totalSpend": "492336",
+                "last30Days": "1"
+            },
+            {
+                "ytVideoId": "9SnXjKRtqI8",
+                "brandId": 272863,
+                "title": "@ Anant Dobriyal's Experience Of Vedix | India's Only Customised Modern Ayurvedic Hair Care Regimen",
+                "description": "Hook2 & Re Edit+08.04.2021",
+                "duration": 92,
+                "thumbnail": "https://i.ytimg.com/vi/9SnXjKRtqI8/default.jpg",
+                "category": "22",
+                "width": 1280,
+                "height": 720,
+                "publishedAt": "2021-04-08T09:03:18.000Z",
+                "totalSpend": "407928",
+                "last30Days": "0"
+            },
+            {
+                "ytVideoId": "sEBk35aQwPU",
+                "brandId": 272863,
+                "title": "##Shivangi's Review Of Vedix | India's Only Customised Modern Ayurvedic Hair Care Regime | 10% Offer",
+                "description": "10% off banner",
+                "duration": 257,
+                "thumbnail": "https://i.ytimg.com/vi/sEBk35aQwPU/default.jpg",
+                "category": "22",
+                "width": 1280,
+                "height": 720,
+                "publishedAt": "2021-07-05T12:56:23.000Z",
+                "totalSpend": "279451",
+                "last30Days": "0"
+            }
+        ]
+    }
+}

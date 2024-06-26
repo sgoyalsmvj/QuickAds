@@ -1,0 +1,61 @@
+{
+    "data": {
+        "brand": {
+            "brandId": 222305,
+            "name": "Traya Health",
+            "swiped": false,
+            "averageVideoDuration": 63,
+            "description": "Welcome to Traya Health. We believe that health goes beyond the shape of your body.\n\nHence in this YouTube channel, we bring you #HealthUncovered, a campaign where we will blow the whistle on the misleading ideas of health by busting myths with scientific facts. Additionally, we’ll share useful health hacks, tips, home remedies, food recipes, transformational stories, expert advice and more.\n \nTune in to get healthy with us and dive into the journey of exploring ideas, topics and facts. Let's understand concepts of health and fitness together, one step at a time!!!\n\nAnd don’t forget to hit that subscribe button and the bell icon! 🔔\n\nTo stay more up to date, keep up with us on\nInstagram: @traya.health\nTwitter: trayahealth\nWebsite: www.traya.health\n\n",
+            "categoryId": 246,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AOPolaR8m3ZGhVrUlcR5ziohWRSQvPJBg2TTz0mXoscp=s88-c-k-c0x00ffffff-no-rj",
+            "views": {
+                "today": 161936096,
+                "last7Days": 13360,
+                "last14Days": 14619,
+                "last21Days": 15810,
+                "last30Days": 42184,
+                "last60Days": 47479,
+                "last90Days": 58238,
+                "last180Days": 922301,
+                "last365Days": 35991057,
+                "last720Days": 160767589,
+                "collected_on": "2024-06-24T22:02:35.997Z"
+            },
+            "spend": {
+                "today": 10643661,
+                "last7Days": 742,
+                "last14Days": 789,
+                "last21Days": 826,
+                "last30Days": 1499,
+                "last60Days": 1865,
+                "last90Days": 2613,
+                "last180Days": 63084,
+                "last365Days": 2304019,
+                "last720Days": 10561866,
+                "collected_on": "2024-06-24T22:02:35.997Z"
+            }
+        },
+        "ranks": {
+            "global": {
+                "rank": 10457,
+                "change": -1002
+            },
+            "country": {
+                "rank": 952,
+                "change": -53
+            },
+            "category": {
+                "rank": 86,
+                "change": 35
+            }
+        },
+        "creativeCount": 334,
+        "top5Countries": [
+            {
+                "countryId": 103,
+                "count": 965,
+                "percentage": 100
+            }
+        ]
+    }
+}

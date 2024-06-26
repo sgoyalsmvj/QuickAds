@@ -1,0 +1,81 @@
+{
+    "data": {
+        "brand": {
+            "brandId": 272863,
+            "name": "Vedix",
+            "swiped": false,
+            "averageVideoDuration": 108,
+            "description": "Namaste! Vedix is India's first brand that offers customised Ayurvedic products based on a Dosha profile questionnaire. It has 10,00,000+ happy customers. Approved by Ayurvedic experts with 20+ years of experience, Vedix hair care, skin care and immunity products are 100% natural without the risk of side effects.\n\nIn this channel, you will find helpful customer reviews on Vedix products, how to use Vedix for maximum benefits, making of our customised products, doctors' tips, and a lot more. Stay tuned! \n",
+            "categoryId": 607,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AOPolaQiqV1SxgrOn3bCv6j-VeWEmDeb4wjHY8L-XOYj=s88-c-k-c0x00ffffff-no-rj",
+            "views": {
+                "today": 93574011,
+                "last7Days": 7776,
+                "last14Days": 14195,
+                "last21Days": 24360,
+                "last30Days": 35909,
+                "last60Days": 81712,
+                "last90Days": 225354,
+                "last180Days": 3569560,
+                "last365Days": 6376519,
+                "last720Days": 56368963,
+                "collected_on": "2024-06-24T22:09:16.322Z"
+            },
+            "spend": {
+                "today": 6488107,
+                "last7Days": 364,
+                "last14Days": 696,
+                "last21Days": 1228,
+                "last30Days": 1769,
+                "last60Days": 4362,
+                "last90Days": 11366,
+                "last180Days": 190884,
+                "last365Days": 386894,
+                "last720Days": 3883750,
+                "collected_on": "2024-06-24T22:09:16.322Z"
+            }
+        },
+        "ranks": {
+            "global": {
+                "rank": 8096,
+                "change": -243
+            },
+            "country": {
+                "rank": 1712,
+                "change": -1152
+            },
+            "category": {
+                "rank": 160,
+                "change": -14
+            }
+        },
+        "creativeCount": 356,
+        "top5Countries": [
+            {
+                "countryId": 103,
+                "count": 894,
+                "percentage": 77.13546160483176
+            },
+            {
+                "countryId": 195,
+                "count": 27,
+                "percentage": 2.3295944779982745
+            },
+            {
+                "countryId": 236,
+                "count": 17,
+                "percentage": 1.4667817083692838
+            },
+            {
+                "countryId": 83,
+                "count": 15,
+                "percentage": 1.2942191544434858
+            },
+            {
+                "countryId": 0,
+                "count": 206,
+                "percentage": 17.773943054357204
+            }
+        ]
+    }
+}

@@ -6,20 +6,21 @@ export function addCommasToNumber(number) {
   const regex = /\B(?=(\d{3})+(?!\d))/g;
   return numStr.replace(regex, ',');
 }
+export function formatTime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+
+  const formattedHours = hours < 10 ? `0${hours}` : hours;
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const formattedSeconds =
+    remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
 
 const VideosTable = ({ videosData }) => {
-  function formatTime(seconds) {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-
-    const formattedHours = hours < 10 ? `0${hours}` : hours;
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-    const formattedSeconds =
-      remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
-
-    return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-  }
+ 
 
   return (
     <div className="p-5">
@@ -50,7 +51,7 @@ const VideosTable = ({ videosData }) => {
                   {video.title}
                 </td>
                 <td className="font-semibold text-blue-400 px-2 py-1 md:px-4 md:py-2">
-                  {video.brandName}
+                  {video.brandId}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2">
                   ${video.totalSpend ? addCommasToNumber(video.totalSpend) : 0}

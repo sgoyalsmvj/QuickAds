@@ -1,0 +1,66 @@
+{
+    "data": {
+        "brand": {
+            "brandId": 299694,
+            "name": "SkinKraft",
+            "swiped": false,
+            "averageVideoDuration": 124,
+            "description": "#SkinKraft recommends customized regimens for your skin and hair through a unique quiz. Our formulation team has worked on these customized solutions based on the skin profiles of 800 women. 10,000 hours of #research went into the making of these products. \n\nStay tuned to our channel to watch videos on SkinKraft product instructions, customer #reviews, testimonials, making of products, and a lot more!\n",
+            "categoryId": 230,
+            "thumbnail": "https://yt3.ggpht.com/ytc/AOPolaSg5GeuKEacZOoKCQVvq7hatgj6QKRfuZBc76euWg=s88-c-k-c0x00ffffff-no-rj",
+            "views": {
+                    "today": 83896406,
+                    "last7Days": 80732,
+                    "last14Days": 132332,
+                    "last21Days": 231556,
+                    "last30Days": 290719,
+                    "last60Days": 409783,
+                    "last90Days": 436703,
+                    "last180Days": 4158549,
+                    "last365Days": 7969148,
+                    "last720Days": 43401335,
+                "collected_on": "2024-06-24T22:12:20.173Z"
+            },
+            "spend": {
+                "today": 5206623,
+                "last7Days": 4436,
+                "last14Days": 7221,
+                "last21Days": 11762,
+                "last30Days": 14477,
+                "last60Days": 20951,
+                "last90Days": 22567,
+                "last180Days": 157563,
+                "last365Days": 223018,
+                "last720Days": 2557608,
+                "collected_on": "2024-06-24T22:12:20.173Z"
+            }
+        },
+        "ranks": {
+            "global": {
+                "rank": 7954,
+                "change": -127
+            },
+            "country": {
+                "rank": 1086,
+                "change": 164
+            },
+            "category": {
+                "rank": 318,
+                "change": 43
+            }
+        },
+        "creativeCount": 276,
+        "top5Countries": [
+            {
+                "countryId": 103,
+                "count": 876,
+                "percentage": 99.54545454545455
+            },
+            {
+                "countryId": 236,
+                "count": 4,
+                "percentage": 0.45454545454545453
+            }
+        ]
+    }
+}

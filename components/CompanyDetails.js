@@ -2,18 +2,22 @@ import React from "react";
 import { FaRegStar } from "react-icons/fa6";
 import { IoMdShare } from "react-icons/io";
 import { GoQuestion } from "react-icons/go";
-import { addCommasToNumber } from "./VideosTable";
+import { addCommasToNumber, formatTime } from "./VideosTable";
 import DarkModeToggle from "./DarkModeToggle";
 
 const CompanyDetails = ({ companyData }) => {
-  // console.log(companyData);
+  console.log(companyData);
   const flags = ["🇺🇸", "🇨🇳", "🇮🇳", "🇧🇷", "🇷🇺"];
   return (
     <main className="dark:bg-dark-background dark:text-dark-text">
-      <div className="flex flex-col items-center justify-center p-5 bg-slate-200 dark:bg-gray-800 w-full md:flex-row md:space-x-2">
-        <h1 className="text-3xl font-bold">
-          {companyData.data.company.legalName}
-        </h1>
+      <div className="flex flex-col items-center justify-center p-5 bg-slate-200 dark:bg-gray-800 w-full  md:space-x-2">
+        <div className="flex space-x-3   justify-center items-center">
+          <img
+            className="rounded-full w-[50px]"
+            src={companyData.data.brand.thumbnail}
+          />
+          <h1 className="text-3xl font-bold">{companyData.data.brand.name}</h1>
+        </div>
         <div className="flex space-x-2 mt-4  mb-2">
           <button className="flex items-center space-x-2 px-2 py-1 shadow rounded bg-white dark:bg-gray-700 dark:text-gray-200 text-black">
             <FaRegStar />
@@ -25,10 +29,11 @@ const CompanyDetails = ({ companyData }) => {
           </button>
           <DarkModeToggle />
         </div>
+        <p className="m-3 text-center">{companyData.data.brand.description}</p>
       </div>
 
       <div className="flex flex-col items-center justify-around p-5 md:flex-row">
-        <div className="border p-3 rounded-lg w-full md:w-1/4 shadow dark:border-gray-700 dark:bg-gray-800">
+        {/* <div className="border p-3 rounded-lg w-full md:w-1/4 shadow dark:border-gray-700 dark:bg-gray-800">
           <h1 className="text-xl font-bold border-b-2 pb-2">Company Info</h1>
           <div className="flex flex-col justify-center items-start mt-2">
             <p className="space-x-2">
@@ -51,6 +56,22 @@ const CompanyDetails = ({ companyData }) => {
               <span className="font-bold">Category:</span> Online Video
             </p>
           </div>
+        </div> */}
+        <div className="flex flex-col w-full md:w-1/4 m-3">
+          <div className="border p-3 rounded-lg mb-3 md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
+            <h1 className="flex items-center justify-start">
+              Duration <GoQuestion />
+            </h1>
+            <p className="font-bold">
+              {formatTime(companyData.data.brand.averageVideoDuration)}
+            </p>
+          </div>
+          <div className="border p-3 rounded-lg md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
+            <h1 className="flex items-center justify-start">
+              Creative Count <GoQuestion />
+            </h1>
+            <p className="font-bold">#{companyData.data.creativeCount}</p>
+          </div>
         </div>
         <div className="flex flex-col w-full md:w-1/4 m-3">
           <div className="border p-3 rounded-lg mb-3 md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
@@ -58,7 +79,7 @@ const CompanyDetails = ({ companyData }) => {
               Ad spend 365 <GoQuestion />
             </h1>
             <p className="font-bold">
-              ${addCommasToNumber(companyData.data.company.spend.today)}
+              ${addCommasToNumber(companyData.data.brand.spend.today)}
             </p>
           </div>
           <div className="border p-3 rounded-lg md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
