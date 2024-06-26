@@ -1,7 +1,7 @@
 import React from "react";
-import Vedix1 from "@/datafiles/Vedix1.json";
-import Vedix2 from "@/datafiles/Vedix2.json";
-import Vedix3 from "@/datafiles/Vedix3.json";
+import VedixData1 from "@/datafiles/Vedix1.json";
+import VedixData2 from "@/datafiles/Vedix2.json";
+import VedixData3 from "@/datafiles/Vedix3.json";
 import CompanyDetails from "@/components/CompanyDetails";
 import VideosTable from "@/components/VideosTable";
 import BarChart from "@/components/BarChart";
@@ -12,11 +12,11 @@ import { IoArrowBackOutline } from "react-icons/io5";
 export const getStaticProps = async () => {
   return {
     props: {
-      companyData: Vedix1,
+      companyData: VedixData1,
       videosData: {
-        page: Vedix3.data.page,
-        hasMore: Vedix3.data.hasMore,
-        results: Vedix3.data.results,
+        page: VedixData3.data.page,
+        hasMore: VedixData3.data.hasMore,
+        results: VedixData3.data.results,
       },
     },
   };

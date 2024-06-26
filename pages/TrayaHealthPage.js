@@ -1,22 +1,22 @@
 import React from "react";
-import Traya1 from "@/datafiles/Trayahealth1.json";
-import Traya2 from "@/datafiles/Trayahealth2.json";
-import Traya3 from "@/datafiles/Trayahealth3.json";
+import TrayaData1 from "@/datafiles/TrayaHealth1.json";
+import TrayaData2 from "@/datafiles/TrayaHealth2.json";
+import TrayaData3 from "@/datafiles/TrayaHealth3.json";
 import CompanyDetails from "@/components/CompanyDetails";
 import VideosTable from "@/components/VideosTable";
 import BarChart from "@/components/BarChart";
 import LineChart from "@/components/LineChart";
-import { barChartData, lineChartData, trayabarChartData, trayalineChartData } from "@/datafiles/graphsData";
+import { trayabarChartData, trayalineChartData } from "@/datafiles/graphsData";
 import Link from "next/link";
 import { IoArrowBackOutline } from "react-icons/io5";
 export const getStaticProps = async () => {
   return {
     props: {
-      companyData: Traya1,
+      companyData: TrayaData1,
       videosData: {
-        page: Traya3.data.page,
-        hasMore: Traya3.data.hasMore,
-        results: Traya3.data.results,
+        page: TrayaData3.data.page,
+        hasMore: TrayaData3.data.hasMore,
+        results: TrayaData3.data.results,
       },
     },
   };

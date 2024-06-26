@@ -1,6 +1,6 @@
-import SkinkraftData from "./Skinkraft1.json";
-import TrayaData from "./Trayahealth1.json";
-import VedixData from "./Vedix1.json";
+import SkinkraftData from "../datafiles/SkinKraft1.json";
+import TrayaData from "../datafiles/TrayaHealth1.json";
+import VedixData from "../datafiles/Vedix1.json";
 // console.log(SkinkraftData);
 function getViewsAndSpend(data) {
   const views = [];

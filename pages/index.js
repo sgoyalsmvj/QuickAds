@@ -26,9 +26,9 @@ export default function Home({ companyData, videosData }) {
     <div>
       
       <div className="flex items-center justify-center space-x-3 bg-gray-500 p-3 text-white ">
-        <Link href="/skinkraft">Skinkraft</Link>
-        <Link href="/traya">Traya</Link>
-        <Link href="/vedix">Vedix</Link>
+        <Link href="/SkinKraftPage">Skinkraft</Link>
+        <Link href="/TrayaHealthPage">Traya</Link>
+        <Link href="/VedixPage">Vedix</Link>
       </div>
     </div>
     // <div className="flex flex-col dark:bg-dark-background dark:text-dark-text">

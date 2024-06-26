@@ -6,7 +6,7 @@ import { addCommasToNumber, formatTime } from "./VideosTable";
 import DarkModeToggle from "./DarkModeToggle";
 
 const CompanyDetails = ({ companyData }) => {
-  console.log(companyData);
+  // console.log(companyData);
   const flags = ["🇺🇸", "🇨🇳", "🇮🇳", "🇧🇷", "🇷🇺"];
   return (
     <main className="dark:bg-dark-background dark:text-dark-text">

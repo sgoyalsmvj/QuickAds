@@ -1,7 +1,7 @@
 import React from "react";
-import SkinKraft1 from "@/datafiles/SkinKraft1.json";
-import SkinKraft2 from "@/datafiles/SkinKraft2.json";
-import SkinKraft3 from "@/datafiles/SkinKraft3.json";
+import SkinKraftData1 from "@/datafiles/SkinKraft1.json";
+import SkinKraftData2 from "@/datafiles/SkinKraft2.json";
+import SkinKraftData3 from "@/datafiles/SkinKraft3.json";
 import CompanyDetails from "@/components/CompanyDetails";
 import VideosTable from "@/components/VideosTable";
 import BarChart from "@/components/BarChart";
@@ -12,11 +12,11 @@ import { IoArrowBackOutline } from "react-icons/io5";
 export const getStaticProps = async () => {
   return {
     props: {
-      companyData: SkinKraft1,
+      companyData: SkinKraftData1,
       videosData: {
-        page: SkinKraft3.data.page,
-        hasMore: SkinKraft3.data.hasMore,
-        results: SkinKraft3.data.results,
+        page: SkinKraftData3.data.page,
+        hasMore: SkinKraftData3.data.hasMore,
+        results: SkinKraftData3.data.results,
       },
     },
   };
