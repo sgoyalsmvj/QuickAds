@@ -99,12 +99,12 @@ const remainingPropertiesData = [
   },
 ];
 
-const StrengthWeaknessSuggestionTable = () => {
+ const StrengthWeaknessSuggestionTable = () => {
   return (
     <div className="p-5">
       <div className="overflow-x-auto">
         <table className="table-auto w-full rounded-lg shadow-lg text-center dark:bg-gray-800 dark:text-gray-200">
-          <thead className="bg-gray-100 dark:bg-gray-700">
+          <thead className="bg-blue-200 dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Company</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Strengths</th>
@@ -115,7 +115,7 @@ const StrengthWeaknessSuggestionTable = () => {
           <tbody>
             {strengthWeaknessSuggestionData.map((item, index) => (
               <tr key={index} className="text-sm md:text-base border dark:border-gray-700">
-                <td className="px-2 py-1 md:px-4 md:py-2 font-medium text-gray-900 dark:text-gray-200">
+                <td className="px-2 py-1 md:px-4 md:py-2 font-medium text-gray-900 dark:text-gray-200 bg-blue-200">
                   {item.Company}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 text-left">
@@ -153,7 +153,7 @@ const RemainingPropertiesTable = () => {
     <div className="p-5">
       <div className="overflow-x-auto">
         <table className="table-auto w-full rounded-lg shadow-lg  dark:bg-gray-800 dark:text-gray-200">
-          <thead className="bg-gray-100 dark:bg-gray-700">
+          <thead className="bg-blue-200 dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Parameter</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Traya Health</th>
@@ -164,7 +164,7 @@ const RemainingPropertiesTable = () => {
           <tbody>
             {remainingPropertiesData.map((data, index) => (
               <tr key={index} className="text-sm md:text-base border dark:border-gray-700">
-                <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200">{data.Parameter}</td>
+                <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 bg-blue-200">{data.Parameter}</td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200">{data.Traya_Health}</td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200">{data.SkinKraft}</td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200">{data.Vedix}</td>
@@ -177,13 +177,5 @@ const RemainingPropertiesTable = () => {
   );
 };
 
-const ComparisonTable = () => {
-  return (
-    <div>
-      <StrengthWeaknessSuggestionTable />
-      <RemainingPropertiesTable />
-    </div>
-  );
-};
+export { StrengthWeaknessSuggestionTable, RemainingPropertiesTable };
 
-export default ComparisonTable;

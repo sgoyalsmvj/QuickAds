@@ -10,13 +10,13 @@ function getViewsAndSpend(data) {
   const spendData = data.data.brand.spend;
 
   for (const [key, value] of Object.entries(viewsData)) {
-    if (key !== "collected_on" && key !== "today") {
+    if (key !== "collected_on" && key !== "today" && key!=="last720Days") {
       views.push(value);
     }
   }
 
   for (const [key, value] of Object.entries(spendData)) {
-    if (key !== "collected_on" && key !== "today") {
+    if (key !== "collected_on" && key !== "today" && key!=="last720Days") {
       spend.push(value);
     }
   }
