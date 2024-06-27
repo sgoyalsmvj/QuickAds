@@ -32,7 +32,6 @@ export function getRelativeTimeSpan(dateString) {
   if (diffDays <= 90) return "In last 90 days";
   if (diffDays <= 180) return "In last 180 days";
   if (diffDays <= 365) return "In last 365 days";
-  if (diffDays <= 720) return "In last 720 days";
   return dateString.split("T")[0];  
 }
 

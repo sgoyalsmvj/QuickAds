@@ -24,17 +24,7 @@ function getViewsAndSpend(data) {
   return { views, spend };
 }
 
-const commonLabels = [
-  "<7",
-  "<14",
-  "<21",
-  "<30",
-  "<60",
-  "<90",
-  "<180",
-  "<365",
-  "<720",
-];
+const commonLabels = ["<7", "<14", "<21", "<30", "<60", "<90", "<180", "<365"];
 export const skinkraftlineChartData = {
   labels: commonLabels,
   datasets: [
@@ -149,12 +139,16 @@ export const trayabarChartData = {
 // );
 
 const prepareLineData = (viewsData, spendData) => {
+  const viewsperspend = [];
+  for (let i = 0; i < viewsData.length; i++) {
+    viewsperspend.push(viewsData[i] / spendData[i]);
+  }
   return {
-    labels: spendData, // Use spendData as labels for the x-axis
+    labels: commonLabels, // Use spendData as labels for the x-axis
     datasets: [
       {
-        label: "Views",
-        data: viewsData,
+        label: "Views/Spends",
+        data: viewsperspend,
         fill: false,
         backgroundColor: "rgba(232, 53, 53, 0.4)",
         borderColor: "rgba(232, 53, 53, 0.91)",
@@ -177,3 +171,56 @@ export const trayaLineData = prepareLineData(
   getViewsAndSpend(TrayaData).views,
   getViewsAndSpend(TrayaData).spend
 );
+
+import SkinKraftData2 from "@/datafiles/SkinKraft2.json";
+import TrayaData2 from "@/datafiles/TrayaHealth2.json";
+import VedixData2 from "@/datafiles/Vedix2.json";
+
+function viewsPerVideo(videodata) {
+  const videos = [];
+
+  // Loop through each video in videodata
+  videodata.data.videos.forEach((video) => {
+    const views = [];
+    const dates = [];
+
+    // Loop through dataPoints of each video
+    video.dataPoints.forEach((element) => {
+      views.push(element.views); // Store views in the 'views' array
+      dates.push(element.date); // Store dates in the 'dates' array
+    });
+
+    // Store data for the current video in 'videos' array
+    videos.push({
+      videoId: video.videoId,
+      views: views,
+      dates: dates,
+    });
+  });
+
+  return videos; // Return array of videos with their views and dates
+}
+export const prepareViewsPerVideoData = (videoData) => {
+  return {
+    label: videoData.dates,
+    datasets: [
+      {
+        label: "Views",
+        data: videoData.views,
+        fill: false,
+        backgroundColor: "rgba(153, 102, 255, 0.2)",
+        borderColor: "rgba(153, 102, 255, 1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+};
+
+export let skinkraftViewsPerVideo = viewsPerVideo(SkinKraftData2);
+export let trayaViewsPerVideo = viewsPerVideo(TrayaData2);
+export let vedixViewsPerVideo = viewsPerVideo(VedixData2);
+
+export const skinkraftViewsPerVideoGraphData = skinkraftViewsPerVideo.forEach((video) => {
+  video = prepareViewsPerVideoData(video);
+});
+console.log(skinkraftViewsPerVideoGraphData);

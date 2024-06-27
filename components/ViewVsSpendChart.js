@@ -37,7 +37,7 @@ export const ViewVsSpendChart = ({ data }) => {
         },
         title: {
           display: true,
-          text: "Ad Spend (In Dollars)",
+          text: "In Days",
           color: darkMode ? "#fff" : "#000", // Change x-axis title color in dark mode
         },
       },
@@ -50,7 +50,7 @@ export const ViewVsSpendChart = ({ data }) => {
         },
         title: {
           display: true,
-          text: "Views",
+          text: "Views per Dollar Spent",
           color: darkMode ? "#fff" : "#000", // Change y-axis title color in dark mode
         },
       },
