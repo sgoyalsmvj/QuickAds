@@ -6,9 +6,10 @@ import CompanyDetails from "@/components/CompanyDetails";
 import VideosTable from "@/components/VideosTable";
 import BarChart from "@/components/BarChart";
 import LineChart from "@/components/LineChart";
-import { trayabarChartData, trayalineChartData } from "@/datafiles/graphsData";
+import { trayabarChartData, trayaChartData, trayalineChartData, trayaLineData } from "@/datafiles/graphsData";
 import Link from "next/link";
 import { IoArrowBackOutline } from "react-icons/io5";
+import { ViewVsSpendChart } from "@/components/ViewVsSpendChart";
 export const getStaticProps = async () => {
   return {
     props: {
@@ -30,11 +31,14 @@ const Traya = ({ companyData, videosData }) => {
         Performance and Testing Volume
       </h1>
       <div className="flex flex-col items-center justify-around md:flex-row">
-        <div className="w-full md:w-1/2 p-2">
+        <div className="w-full md:w-1/3 p-2">
           <LineChart data={trayalineChartData} />
         </div>
-        <div className="w-full md:w-1/2 p-2">
+        <div className="w-full md:w-1/3 p-2">
           <BarChart data={trayabarChartData} />
+        </div>
+        <div className="w-full md:w-1/3 p-2">
+          <ViewVsSpendChart data={trayaLineData}/>
         </div>
       </div>
       <VideosTable videosData={videosData} />

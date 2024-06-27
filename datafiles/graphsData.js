@@ -10,32 +10,33 @@ function getViewsAndSpend(data) {
   const spendData = data.data.brand.spend;
 
   for (const [key, value] of Object.entries(viewsData)) {
-    if (key !== "collected_on") {
+    if (key !== "collected_on" && key !== "today") {
       views.push(value);
     }
   }
 
   for (const [key, value] of Object.entries(spendData)) {
-    if (key !== "collected_on") {
+    if (key !== "collected_on" && key !== "today") {
       spend.push(value);
     }
   }
-
+  // console.log(views, spend);
   return { views, spend };
 }
+
+const commonLabels = [
+  "<7",
+  "<14",
+  "<21",
+  "<30",
+  "<60",
+  "<90",
+  "<180",
+  "<365",
+  "<720",
+];
 export const skinkraftlineChartData = {
-  labels: [
-    "today",
-    "<7Days",
-    "<14Days",
-    "<21Days",
-    "<30Days",
-    "<60Days",
-    "<90Days",
-    "<180Days",
-    "<365Days",
-    "<720Days",
-  ],
+  labels: commonLabels,
   datasets: [
     {
       label: "Ad Spend",
@@ -48,18 +49,7 @@ export const skinkraftlineChartData = {
 };
 
 export const skinkraftbarChartData = {
-  labels: [
-    "today",
-    "<7Days",
-    "<14Days",
-    "<21Days",
-    "<30Days",
-    "<60Days",
-    "<90Days",
-    "<180Days",
-    "<365Days",
-    "<720Days",
-  ],
+  labels: commonLabels,
   datasets: [
     {
       label: "Views",
@@ -71,20 +61,8 @@ export const skinkraftbarChartData = {
   ],
 };
 
-
 export const vedixlineChartData = {
-  labels: [
-    "today",
-    "<7Days",
-    "<14Days",
-    "<21Days",
-    "<30Days",
-    "<60Days",
-    "<90Days",
-    "<180Days",
-    "<365Days",
-    "<720Days",
-  ],
+  labels: commonLabels,
   datasets: [
     {
       label: "Ad Spend",
@@ -97,18 +75,7 @@ export const vedixlineChartData = {
 };
 
 export const vedixbarChartData = {
-  labels: [
-    "today",
-    "<7Days",
-    "<14Days",
-    "<21Days",
-    "<30Days",
-    "<60Days",
-    "<90Days",
-    "<180Days",
-    "<365Days",
-    "<720Days",
-  ],
+  labels: commonLabels,
   datasets: [
     {
       label: "Views",
@@ -120,20 +87,8 @@ export const vedixbarChartData = {
   ],
 };
 
-
 export const trayalineChartData = {
-  labels: [
-    "today",
-    "<7Days",
-    "<14Days",
-    "<21Days",
-    "<30Days",
-    "<60Days",
-    "<90Days",
-    "<180Days",
-    "<365Days",
-    "<720Days",
-  ],
+  labels: commonLabels,
   datasets: [
     {
       label: "Ad Spend",
@@ -146,18 +101,7 @@ export const trayalineChartData = {
 };
 
 export const trayabarChartData = {
-  labels: [
-    "today",
-    "<7Days",
-    "<14Days",
-    "<21Days",
-    "<30Days",
-    "<60Days",
-    "<90Days",
-    "<180Days",
-    "<365Days",
-    "<720Days",
-  ],
+  labels: commonLabels,
   datasets: [
     {
       label: "Views",
@@ -168,3 +112,68 @@ export const trayabarChartData = {
     },
   ],
 };
+
+// export const viewsVsSpendChartData = (viewsData, spendData) => ({
+//   labels: commonLabels,
+//   datasets: [
+//     {
+//       label: "Views",
+//       data: viewsData,
+//       fill: false,
+//       backgroundColor: "rgba(153, 102, 255, 0.2)",
+//       borderColor: "rgba(153, 102, 255, 1)",
+//     },
+//     {
+//       label: "Spend",
+//       data: spendData,
+//       fill: false,
+//       backgroundColor: "rgba(75,192,192,0.2)",
+//       borderColor: "rgba(75,192,192,1)",
+//     },
+//   ],
+// });
+
+// export const skinkraftChartData = viewsVsSpendChartData(
+//   getViewsAndSpend(SkinkraftData).views,
+//   getViewsAndSpend(SkinkraftData).spend
+// );
+
+// export const vedixChartData = viewsVsSpendChartData(
+//   getViewsAndSpend(VedixData).views,
+//   getViewsAndSpend(VedixData).spend
+// );
+
+// export const trayaChartData = viewsVsSpendChartData(
+//   getViewsAndSpend(TrayaData).views,
+//   getViewsAndSpend(TrayaData).spend
+// );
+
+const prepareLineData = (viewsData, spendData) => {
+  return {
+    labels: spendData, // Use spendData as labels for the x-axis
+    datasets: [
+      {
+        label: "Views",
+        data: viewsData,
+        fill: false,
+        backgroundColor: "rgba(232, 53, 53, 0.4)",
+        borderColor: "rgba(232, 53, 53, 0.91)",
+      },
+    ],
+  };
+};
+
+export const skinkraftLineData = prepareLineData(
+  getViewsAndSpend(SkinkraftData).views,
+  getViewsAndSpend(SkinkraftData).spend
+);
+
+export const vedixLineData = prepareLineData(
+  getViewsAndSpend(VedixData).views,
+  getViewsAndSpend(VedixData).spend
+);
+
+export const trayaLineData = prepareLineData(
+  getViewsAndSpend(TrayaData).views,
+  getViewsAndSpend(TrayaData).spend
+);

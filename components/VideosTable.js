@@ -6,6 +6,7 @@ export function addCommasToNumber(number) {
   const regex = /\B(?=(\d{3})+(?!\d))/g;
   return numStr.replace(regex, ',');
 }
+
 export function formatTime(seconds) {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
@@ -19,20 +20,33 @@ export function formatTime(seconds) {
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
 
-const VideosTable = ({ videosData }) => {
- 
+export function getRelativeTimeSpan(dateString) {
+  const publishDate = new Date(dateString);
+  const currentDate = new Date();
+  const diffTime = Math.abs(currentDate - publishDate);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
+  if (diffDays <= 7) return "In last 7 days";
+  if (diffDays <= 30) return "In last 30 days";
+  if (diffDays <= 60) return "In last 60 days";
+  if (diffDays <= 90) return "In last 90 days";
+  if (diffDays <= 180) return "In last 180 days";
+  if (diffDays <= 365) return "In last 365 days";
+  if (diffDays <= 720) return "In last 720 days";
+  return dateString.split("T")[0];  
+}
+
+const VideosTable = ({ videosData }) => {
   return (
     <div className="p-5">
       <div className="overflow-x-auto">
-        <table className="table-auto w-full rounded-lg shadow-lg dark:bg-gray-800 dark:text-gray-200">
+        <table className="table-auto w-full rounded-lg shadow-lg text-center dark:bg-gray-800 dark:text-gray-200">
           <thead className="bg-gray-100 dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Thumbnail</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Title</th>
-              <th className="px-2 py-1 md:px-4 md:py-2">Brand</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Total Ad Spend</th>
-              <th className="px-2 py-1 md:px-4 md:py-2">Ad Spend 30</th>
+              <th className="px-2 py-1 md:px-4 md:py-2">Ad Spend In Last 30 Days</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Publish Date</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Duration</th>
             </tr>
@@ -50,9 +64,6 @@ const VideosTable = ({ videosData }) => {
                 <td className="font-semibold px-2 py-1 md:px-4 md:py-2">
                   {video.title}
                 </td>
-                <td className="font-semibold text-blue-400 px-2 py-1 md:px-4 md:py-2">
-                  {video.brandId}
-                </td>
                 <td className="px-2 py-1 md:px-4 md:py-2">
                   ${video.totalSpend ? addCommasToNumber(video.totalSpend) : 0}
                 </td>
@@ -60,7 +71,7 @@ const VideosTable = ({ videosData }) => {
                   ${video.last30Days ? addCommasToNumber(video.last30Days) : 0}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2">
-                  {video.publishedAt.split("T")[0]}
+                  {getRelativeTimeSpan(video.publishedAt)}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2">
                   {formatTime(video.duration)}
