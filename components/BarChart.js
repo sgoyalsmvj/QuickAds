@@ -29,7 +29,9 @@ const BarChart = ({ data }) => {
         },
       },
       y: {
+        type: "logarithmic",
         ticks: {
+          // display:false,
           color: `${darkMode ? "#fff" : "#000"}`,
           callback: function (value) {
             return formatNumber(value);

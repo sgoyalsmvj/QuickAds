@@ -42,6 +42,7 @@ export const ViewVsSpendChart = ({ data }) => {
         },
       },
       y: {
+        // display:false,
         ticks: {
           color: darkMode ? "#fff" : "#000",
           callback: function (value) {

@@ -33,20 +33,24 @@ export const getStaticProps = async () => {
 };
 
 import data from "@/datafiles/contentData";
+import ButtonContainer from "@/components/ButtonComponent";
 export default function Home({ companyData, videosData }) {
   return (
     <div className="p-3 m-5 flex flex-col justify-center ">
-      <div className="flex justify-around text-center text-xl mb-5">
+      <h1 className="text-center  text-4xl font-bold p-3">
+        Competition Analysis
+      </h1>
+      <div className="flex justify-around text-center text-xl mt-5 mb-5">
         <Link
-          className=" w-1/4 rounded hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-blue-200"
+          className=" w-1/4 rounded-[3rem] hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-red-200  border-2 border-gray-600"
           href="/SkinKraftPage"
         >
           <img
-            className="rounded-lg m-3 w-[150px]"
+            className="border border-slate-800  rounded-lg m-3 w-[150px]"
             src="https://yt3.ggpht.com/ytc/AOPolaSg5GeuKEacZOoKCQVvq7hatgj6QKRfuZBc76euWg=s88-c-k-c0x00ffffff-no-rj"
             alt="Skinkraft"
           />
-          <p className="m-2 text-base">
+          <p className="m-2 text-sm">
             <b>SkinKraft</b> recommends customized regimens for your skin and
             hair through a unique quiz. Our formulation team has worked on these
             customized solutions based on the skin profiles of 800 women. 10,000
@@ -59,14 +63,14 @@ export default function Home({ companyData, videosData }) {
 
         <Link
           href="/TrayaHealthPage"
-          className=" w-1/4 rounded hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-blue-200"
+          className=" w-1/4 rounded-[3rem] hover:shadow-md shadow-lg  flex flex-col items-center justify-center text-left p-3  bg-blue-200 border-2 border-black"
         >
           <img
-            className="rounded-lg m-3 w-[150px]"
+            className="border border-slate-800 shadow-2xl rounded-lg m-3 w-[150px]"
             src="https://yt3.ggpht.com/ytc/AOPolaR8m3ZGhVrUlcR5ziohWRSQvPJBg2TTz0mXoscp=s88-c-k-c0x00ffffff-no-rj"
             alt="Traya Health"
           />
-          <p className="m-2 text-base">
+          <p className="m-2 text-sm">
             Welcome to <b>Traya Health</b>. We believe that health goes beyond
             the shape of your body. Hence in this YouTube channel, we bring you
             #<b>HealthUncovered</b>, a campaign where we will blow the whistle
@@ -80,14 +84,14 @@ export default function Home({ companyData, videosData }) {
 
         <Link
           href="/VedixPage"
-          className=" w-1/4 rounded hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-blue-200"
+          className=" w-1/4 rounded-[3rem] hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-red-200 border-2 border-gray-600"
         >
           <img
-            className="rounded-lg m-3 w-[150px]"
+            className="border border-slate-800  rounded-lg m-3 w-[150px]"
             src="https://yt3.ggpht.com/ytc/AOPolaQiqV1SxgrOn3bCv6j-VeWEmDeb4wjHY8L-XOYj=s88-c-k-c0x00ffffff-no-rj"
             alt="Vedix"
           />
-          <p className="m-2 text-base">
+          <p className="m-2 text-sm">
             Namaste! <b>Vedix</b> is India's first brand that offers customised
             <b> Ayurvedic </b>products based on a Dosha profile questionnaire.
             It has 10,00,000+ happy customers. Approved by Ayurvedic experts
@@ -100,29 +104,7 @@ export default function Home({ companyData, videosData }) {
         </Link>
       </div>
 
-      <div className="flex justify-around mb-5 mt-7">
-        <Link href={"/adSpend"}>
-          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
-            Ad Spend & Effectiveness
-          </button>
-        </Link>
-        <Link href={"/swot"}>
-          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
-            Content SWOT
-          </button>
-        </Link>
-
-        <Link href={"/contentStrategy"}>
-          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
-            Content Strategy
-          </button>
-        </Link>
-        <Link href={"/summary"}>
-          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
-            Summary
-          </button>
-        </Link>
-      </div>
+      <ButtonContainer />
     </div>
   );
 }

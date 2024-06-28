@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import { FaRegStar } from "react-icons/fa6";
-import { IoMdShare } from "react-icons/io";
 import { GoQuestion } from "react-icons/go";
 import { addCommasToNumber, formatTime } from "./VideosTable";
-import DarkModeToggle from "./DarkModeToggle";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 const CompanyDetails = ({ companyData }) => {
-  // console.log(companyData);
   const flags = ["🇺🇸", "🇨🇳", "🇮🇳", "🇧🇷", "🇷🇺"];
   const [viewmore, setViewmore] = useState(false);
 
@@ -18,8 +13,8 @@ const CompanyDetails = ({ companyData }) => {
 
   return (
     <main className="dark:bg-dark-background dark:text-dark-text">
-      <div className="flex flex-col items-center justify-center p-5 bg-slate-200 dark:bg-gray-800 w-full  md:space-x-2">
-        <div className="flex space-x-3   justify-center items-center">
+      <div className="flex flex-col items-center justify-center p-5 bg-slate-200 dark:bg-gray-800 w-full md:space-x-2">
+        <div className="flex space-x-3 justify-center items-center">
           <img
             className="rounded-full w-[50px]"
             src={companyData.data.brand.thumbnail}
@@ -46,7 +41,11 @@ const CompanyDetails = ({ companyData }) => {
         <div className="flex flex-col w-full md:w-1/4 m-3">
           <div className="border p-3 rounded-lg mb-3 md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <h1 className="flex items-center justify-start">
-              Average Duration <GoQuestion />
+              Average Duration{" "}
+              <span className="tooltip">
+                <GoQuestion className="question-icon" />
+                <span className="tooltip-text">Average duration of videos uploaded by the company</span>
+              </span>
             </h1>
             <p className="font-bold">
               {formatTime(companyData.data.brand.averageVideoDuration)}
@@ -54,7 +53,11 @@ const CompanyDetails = ({ companyData }) => {
           </div>
           <div className="border p-3 rounded-lg md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <h1 className="flex items-center justify-start">
-              Total Creative Count <GoQuestion />
+              Total Creative Count{" "}
+              <span className="tooltip">
+                <GoQuestion className="question-icon" />
+                <span className="tooltip-text">Total number of creative assets produced by the company</span>
+              </span>
             </h1>
             <p className="font-bold">{companyData.data.creativeCount}</p>
           </div>
@@ -62,7 +65,11 @@ const CompanyDetails = ({ companyData }) => {
         <div className="flex flex-col w-full md:w-1/4 m-3">
           <div className="border p-3 rounded-lg mb-3 md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <h1 className="flex items-center justify-start">
-              Ad spend In Last Year <GoQuestion />
+              Ad spend In Last Year{" "}
+              <span className="tooltip">
+                <GoQuestion className="question-icon" />
+                <span className="tooltip-text">Advertising expenditure in the last year</span>
+              </span>
             </h1>
             <p className="font-bold">
               ${addCommasToNumber(companyData.data.brand.spend.today)}
@@ -70,7 +77,11 @@ const CompanyDetails = ({ companyData }) => {
           </div>
           <div className="border p-3 rounded-lg md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <h1 className="flex items-center justify-start">
-              Global rank <GoQuestion />
+              Global rank{" "}
+              <span className="tooltip">
+                <GoQuestion className="question-icon" />
+                <span className="tooltip-text">Global ranking of the company</span>
+              </span>
             </h1>
             <p className="font-bold">
               #{companyData.data.ranks.global.rank}{" "}
@@ -85,10 +96,14 @@ const CompanyDetails = ({ companyData }) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col w-full m-3 md:w-1/4 ">
+        <div className="flex flex-col w-full m-3 md:w-1/4">
           <div className="border p-3 rounded-lg w-full mb-3 md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <h1 className="flex items-center justify-start">
-              Country rank <GoQuestion />
+              Country rank{" "}
+              <span className="tooltip">
+                <GoQuestion className="question-icon" />
+                <span className="tooltip-text">Country-specific ranking of the company</span>
+              </span>
             </h1>
             <p className="font-bold">
               #{companyData.data.ranks.country.rank}{" "}
@@ -104,7 +119,11 @@ const CompanyDetails = ({ companyData }) => {
           </div>
           <div className="border p-3 rounded-lg w-full md:m-2 shadow dark:border-gray-700 dark:bg-gray-800">
             <h1 className="flex items-center justify-start">
-              Category rank <GoQuestion />
+              Category rank{" "}
+              <span className="tooltip">
+                <GoQuestion className="question-icon" />
+                <span className="tooltip-text">Category-specific ranking of the company</span>
+              </span>
             </h1>
             <p className="font-bold">
               #{companyData.data.ranks.category.rank}{" "}
@@ -123,7 +142,7 @@ const CompanyDetails = ({ companyData }) => {
           <h1 className="text-xl font-bold border-b-2 pb-2">
             Campaigns per Country
           </h1>
-          <div className="flex flex-col mt-2  md:h-[95px] overflow-y-auto">
+          <div className="flex flex-col mt-2 md:h-[95px] overflow-y-auto">
             {companyData.data.top5Countries.map((country, i) => (
               <div className="flex space-x-3" key={i}>
                 <h2> {flags[i]}:</h2>
