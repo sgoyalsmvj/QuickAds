@@ -1,9 +1,14 @@
 import React from "react";
-import { Bar, Line } from "react-chartjs-2";
+import { Chart as Ch } from "chart.js";
+import { Bar, Line, Chart } from "react-chartjs-2";
+import { CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from "chart.js";
 import Campaigns from "./Campaigns";
 import SkinKraftData1 from "@/datafiles/SkinKraft1.json";
 import TrayaData1 from "@/datafiles/TrayaHealth1.json";
 import VedixData1 from "@/datafiles/Vedix1.json";
+import data from "@/datafiles/contentData";
+
+Ch.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
 const GraphsIndex = ({ data }) => {
   const brands = ["SkinKraft", "Traya", "Vedix"]; // Updated brand order
@@ -148,7 +153,7 @@ const GraphsIndex = ({ data }) => {
           backgroundColor = `rgba(0, 0, 0, 0.2)`; // #000
           borderColor = `rgba(0, 0, 0, 1)`;
         } else if (brand === "Vedix") {
-          backgroundColor = `rgba(255, 0, 0,1)`; // #e3d6b4
+          backgroundColor = `rgba(255, 0, 0,0.4)`; // #e3d6b4
           borderColor = `rgba(255, 0, 0,1)`;
         }
         return {
@@ -188,7 +193,7 @@ const GraphsIndex = ({ data }) => {
           backgroundColor = `rgba(0, 0, 0, 0.2)`; // #000
           borderColor = `rgba(0, 0, 0, 1)`;
         } else if (brand === "Vedix") {
-          backgroundColor = `rgba(255, 0, 0,1)`; // #e3d6b4
+          backgroundColor = `rgba(255, 0, 0,0.4)`; // #e3d6b4
           borderColor = `rgba(255, 0, 0,1)`;
         }
         return {
@@ -231,22 +236,22 @@ const GraphsIndex = ({ data }) => {
 
   return (
     <div className="w-full">
-      <div className="flex justify-around items-center w-full mt-10">
-        <div className="w-1/2">
-          <h2 className="m-3">Weekly Spend Comparison</h2>
+      <div className="flex justify-around items-center w-full mt-10 font-semibold">
+        <div className="w-1/2 flex flex-col items-center">
+          <h2 className="m-6">Weekly Spend Comparison</h2>
           <Line data={getWeeklySpendComparison()} options={options1} />
         </div>
-        <div className="w-1/2">
-          <h2 className="m-3">Effectiveness (Views/Dollar)</h2>
+        <div className="w-1/2 flex flex-col items-center">
+          <h2 className="m-6">Effectiveness (Views/Dollar)</h2>
           <Line data={getEffectiveness()} options={options2} />
         </div>
-        <div className="w-1/2">
-          <h2 className="m-3">Average Spend per Creative</h2>
+        <div className="w-1/2 flex flex-col items-center">
+          <h2 className="m-6">Average Spend per Creative</h2>
           <Bar data={getAvgSpendPerCreative()} options={options3} />
         </div>
       </div>
 
-      <div className="flex justify-around">
+      <div className="flex m-4 justify-around">
         <Campaigns companyData={company1Data} />
         <Campaigns companyData={company2Data} />
         <Campaigns companyData={company3Data} />

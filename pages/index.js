@@ -32,77 +32,10 @@ export const getStaticProps = async () => {
   };
 };
 
+import data from "@/datafiles/contentData";
 export default function Home({ companyData, videosData }) {
-  const [activeComponent, setActiveComponent] = useState("GraphsIndex");
-
-  const data = {
-    traya: {
-      spend: {
-        today: 10643661,
-        last7Days: 742,
-        last14Days: 789,
-        last21Days: 826,
-        last30Days: 1499,
-      },
-      views: {
-        last7Days: 13360,
-        last14Days: 14619,
-        last21Days: 15810,
-        last30Days: 42184,
-      },
-      creativeCount: 334,
-    },
-    vedix: {
-      spend: {
-        today: 6488107,
-        last7Days: 364,
-        last14Days: 696,
-        last21Days: 1228,
-        last30Days: 1769,
-      },
-      views: {
-        last7Days: 7776,
-        last14Days: 14195,
-        last21Days: 24360,
-        last30Days: 35909,
-      },
-      creativeCount: 356,
-    },
-    skinkraft: {
-      spend: {
-        today: 5206623,
-        last7Days: 4436,
-        last14Days: 7221,
-        last21Days: 11762,
-        last30Days: 14477,
-      },
-      views: {
-        last7Days: 80732,
-        last14Days: 132332,
-        last21Days: 231556,
-        last30Days: 290719,
-      },
-      creativeCount: 276,
-    },
-  };
-
-  const renderComponent = () => {
-    switch (activeComponent) {
-      case "GraphsIndex":
-        return <GraphsIndex data={data} />;
-      case "SpiderChart":
-        return <SpiderChart />;
-      case "ComparisonTable":
-        return <RemainingPropertiesTable />;
-      case "SummaryTable":
-        return <StrengthWeaknessSuggestionTable />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="p-3 m-5">
+    <div className="p-3 m-5 flex flex-col justify-center ">
       <div className="flex justify-around text-center text-xl mb-5">
         <Link
           className=" w-1/4 rounded hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-blue-200"
@@ -113,7 +46,7 @@ export default function Home({ companyData, videosData }) {
             src="https://yt3.ggpht.com/ytc/AOPolaSg5GeuKEacZOoKCQVvq7hatgj6QKRfuZBc76euWg=s88-c-k-c0x00ffffff-no-rj"
             alt="Skinkraft"
           />
-          <p className="m-2">
+          <p className="m-2 text-base">
             <b>SkinKraft</b> recommends customized regimens for your skin and
             hair through a unique quiz. Our formulation team has worked on these
             customized solutions based on the skin profiles of 800 women. 10,000
@@ -133,7 +66,7 @@ export default function Home({ companyData, videosData }) {
             src="https://yt3.ggpht.com/ytc/AOPolaR8m3ZGhVrUlcR5ziohWRSQvPJBg2TTz0mXoscp=s88-c-k-c0x00ffffff-no-rj"
             alt="Traya Health"
           />
-          <p className="m-2">
+          <p className="m-2 text-base">
             Welcome to <b>Traya Health</b>. We believe that health goes beyond
             the shape of your body. Hence in this YouTube channel, we bring you
             #<b>HealthUncovered</b>, a campaign where we will blow the whistle
@@ -154,7 +87,7 @@ export default function Home({ companyData, videosData }) {
             src="https://yt3.ggpht.com/ytc/AOPolaQiqV1SxgrOn3bCv6j-VeWEmDeb4wjHY8L-XOYj=s88-c-k-c0x00ffffff-no-rj"
             alt="Vedix"
           />
-          <p className="m-2">
+          <p className="m-2 text-base">
             Namaste! <b>Vedix</b> is India's first brand that offers customised
             <b> Ayurvedic </b>products based on a Dosha profile questionnaire.
             It has 10,00,000+ happy customers. Approved by Ayurvedic experts
@@ -167,50 +100,29 @@ export default function Home({ companyData, videosData }) {
         </Link>
       </div>
 
-      <div className="flex justify-around mb-5">
-        <button
-          className={`px-4 py-2 mx-2 ${
-            activeComponent === "GraphsIndex"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200"
-          }`}
-          onClick={() => setActiveComponent("GraphsIndex")}
-        >
-          Ad Spend & Effectiveness
-        </button>
-        <button
-          className={`px-4 py-2 mx-2 ${
-            activeComponent === "SpiderChart"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200"
-          }`}
-          onClick={() => setActiveComponent("SpiderChart")}
-        >
-          Content SWOT
-        </button>
-        <button
-          className={`px-4 py-2 mx-2 ${
-            activeComponent === "ComparisonTable"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200"
-          }`}
-          onClick={() => setActiveComponent("ComparisonTable")}
-        >
-          Content Strategy
-        </button>
-        <button
-          className={`px-4 py-2 mx-2 ${
-            activeComponent === "SummaryTable"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-200"
-          }`}
-          onClick={() => setActiveComponent("SummaryTable")}
-        >
-          Summary
-        </button>
-      </div>
+      <div className="flex justify-around mb-5 mt-7">
+        <Link href={"/adSpend"}>
+          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
+            Ad Spend & Effectiveness
+          </button>
+        </Link>
+        <Link href={"/swot"}>
+          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
+            Content SWOT
+          </button>
+        </Link>
 
-      <div className="flex justify-center">{renderComponent()}</div>
+        <Link href={"/contentStrategy"}>
+          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
+            Content Strategy
+          </button>
+        </Link>
+        <Link href={"/summary"}>
+          <button className={`px-4 py-2 mx-2 ${"bg-blue-500 text-white"} rounded-md`}>
+            Summary
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
