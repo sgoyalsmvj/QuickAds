@@ -31,7 +31,7 @@ const AdSpend = () => {
         <IoArrowBackOutline />
       </Link>
       <h1 className="text-4xl font-bold text-center mt-8">
-        Ad Spend & Effectiveness
+        Ad Spend & Effectiveness (Youtube)
       </h1>
       <div className="flex items-center justify-center w-full mt-8">
         <GraphsIndex data={data} />
