@@ -32,7 +32,7 @@ const data = {
 const Insights = () => {
   return (
     <div className="overflow-x-auto">
-      <table className="table-auto w-full rounded-lg shadow-lg  dark:bg-gray-800 dark:text-gray-200">
+      <table className="table-auto w-full rounded-lg shadow-lg dark:bg-gray-800 dark:text-gray-200">
         <thead className="bg-blue-200 dark:bg-gray-700">
           <tr>
             <th className="px-2 py-1 md:px-4 md:py-2">Criteria</th>
@@ -49,11 +49,20 @@ const Insights = () => {
               key={label}
               className="text-sm md:text-base border dark:border-gray-700"
             >
-              <td className="py-2 px-4 border-b border-gray-200">{label}</td>
-              {data.datasets.map((dataset) => (
+              <td className="bg-blue-200 py-2 px-4 border-b border-gray-200">
+                {label}
+              </td>
+              {data.datasets.map((dataset, colIndex) => (
                 <td
-                  key={dataset.label}
-                  className="py-2 px-4 border-b border-gray-200"
+                  key={`${dataset.label}-${colIndex}`}
+                  className={`py-2 px-4 border-b border-gray-200 ${
+                    dataset.label === "Traya Health" &&
+                    (dataset.data[rowIndex] <= 5
+                      ? "text-red-500 font-bold"
+                      : dataset.data[rowIndex] >= 8
+                      ? "text-green-500 font-bold"
+                      : "")
+                  }`}
                 >
                   {dataset.data[rowIndex]}
                 </td>

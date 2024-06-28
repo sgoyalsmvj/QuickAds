@@ -31,34 +31,51 @@ const ButtonComponent = ({ href, text, isDisable, logo }) => {
     </Link>
   );
 };
+const ArrowComponent = () => {
+  return (
+    <div className="flex flex-col">
+      <div className="w-48 h-1 -rotate-[30deg]  bg-black"></div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="w-48 h-1 rotate-[30deg] bg-black"></div>
+    </div>
+  );
+};
 
 const ButtonContainer = () => {
   return (
-    <div className="flex justify-around mb-5 mt-7">
-      <ButtonComponent
-        href="/adSpend"
-        text="Ad Spend & Effectiveness"
-        isDisable={false}
-        logo={logo1}
-      />
-      <ButtonComponent
-        href="/swot"
-        text="Competitor Video Analytics"
-        logo={logo2}
-        isDisable={false}
-      />
-      <ButtonComponent
-        href="/contentStrategy"
-        text="Content Strategy"
-        isDisable={false}
-        logo={logo3}
-      />
+    <div className="flex items-center justify-center mb-5 mt-7">
       <ButtonComponent
         href="/summary"
         text="Executive Summary"
         isDisable={false}
         logo={logo4}
       />
+      <div className="w-24 h-1 bg-black"></div>
+      <ArrowComponent />
+      <div className="flex space-y-3 flex-col">
+        <ButtonComponent
+          href="/adSpend"
+          text="Ad Spend & Effectiveness"
+          isDisable={false}
+          logo={logo1}
+        />
+        <ButtonComponent
+          href="/swot"
+          text="Competitor Video Analytics"
+          logo={logo2}
+          isDisable={false}
+        />
+      </div>
+
+      {/* <ButtonComponent
+        href="/contentStrategy"
+        text="Content Strategy"
+        isDisable={false}
+        logo={logo3}
+      /> */}
     </div>
   );
 };
