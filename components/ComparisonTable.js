@@ -99,16 +99,15 @@ const remainingPropertiesData = [
   },
 ];
 
- const StrengthWeaknessSuggestionTable = () => {
+const StrengthWeaknessSuggestionTable = () => {
   return (
-    <div className="p-5">
+    <div className="md:p-5 w-full">
       <div className="overflow-x-auto">
         <table className="table-auto w-full rounded-lg shadow-lg text-center dark:bg-gray-800 dark:text-gray-200">
           <thead className="bg-blue-200 dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Company</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Strengths</th>
-              <th className="px-2 py-1 md:px-4 md:py-2">Weaknesses</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Suggestions</th>
             </tr>
           </thead>
@@ -119,23 +118,16 @@ const remainingPropertiesData = [
                   {item.Company}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 text-left">
-                  <ul>
+                  <ul className="list-disc list-inside">
                     {item.Strengths.map((strength, i) => (
-                      <li key={i} className="list-disc list-inside">{strength}</li>
+                      <li key={i}>{strength}</li>
                     ))}
                   </ul>
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 text-left">
-                  <ul>
-                    {item.Weaknesses.map((weakness, i) => (
-                      <li key={i} className="list-disc list-inside">{weakness}</li>
-                    ))}
-                  </ul>
-                </td>
-                <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 text-left">
-                  <ul>
+                  <ul className="list-disc list-inside">
                     {item.Suggestions.map((suggestion, i) => (
-                      <li key={i} className="list-disc list-inside">{suggestion}</li>
+                      <li key={i}>{suggestion}</li>
                     ))}
                   </ul>
                 </td>
@@ -148,11 +140,12 @@ const remainingPropertiesData = [
   );
 };
 
+
 const RemainingPropertiesTable = () => {
   return (
-    <div className="p-5">
+    <div className="py-4 w-full">
       <div className="overflow-x-auto">
-        <table className="table-auto w-full rounded-lg shadow-lg  dark:bg-gray-800 dark:text-gray-200">
+        <table className="table-auto w-full rounded-lg shadow-lg dark:bg-gray-800 dark:text-gray-200">
           <thead className="bg-blue-200 dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Parameter</th>
@@ -178,4 +171,3 @@ const RemainingPropertiesTable = () => {
 };
 
 export { StrengthWeaknessSuggestionTable, RemainingPropertiesTable };
-

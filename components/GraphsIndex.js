@@ -1,7 +1,7 @@
 import React from "react";
-import { Chart as Ch } from "chart.js";
-import { Bar, Line, Chart } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import { CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from "chart.js";
+import { Chart as Ch } from "chart.js";
 import Campaigns from "./Campaigns";
 import SkinKraftData1 from "@/datafiles/SkinKraft1.json";
 import TrayaData1 from "@/datafiles/TrayaHealth1.json";
@@ -221,7 +221,7 @@ const GraphsIndex = ({ data }) => {
           backgroundColor: [
             `rgba(1, 175, 200, 0.2)`, // #01afc8
             `rgba(0, 0, 0, 0.2)`, // #000
-            `rgba(255, 0, 0,0.4)`
+            `rgba(255, 0, 0,0.4)` // #e3d6b4
           ],
           borderColor: [
             `rgba(1, 175, 200, 1)`,
@@ -235,23 +235,23 @@ const GraphsIndex = ({ data }) => {
   };
 
   return (
-    <div className="w-full">
-      <div className="flex justify-around items-center w-full mt-10 font-semibold">
-        <div className="w-1/2 flex flex-col items-center">
+    <div className="w-full overflow-x-auto">
+      <div className="flex flex-col md:flex-row justify-around items-center w-full mt-10 font-semibold">
+        <div className="w-full md:w-1/2 flex flex-col items-center">
           <h2 className="m-6">Weekly Spend Comparison</h2>
           <Line data={getWeeklySpendComparison()} options={options1} />
         </div>
-        <div className="w-1/2 flex flex-col items-center">
+        <div className="w-full md:w-1/2 flex flex-col items-center">
           <h2 className="m-6">Effectiveness (Views/Dollar)</h2>
           <Line data={getEffectiveness()} options={options2} />
         </div>
-        <div className="w-1/2 flex flex-col items-center">
+        <div className="w-full md:w-1/2 flex flex-col items-center">
           <h2 className="m-6">Average Spend per Creative</h2>
           <Bar data={getAvgSpendPerCreative()} options={options3} />
         </div>
       </div>
 
-      <div className="flex m-4 justify-around">
+      <div className="flex flex-col md:flex-row m-2 md:m-4  justify-around">
         <Campaigns companyData={company1Data} />
         <Campaigns companyData={company2Data} />
         <Campaigns companyData={company3Data} />

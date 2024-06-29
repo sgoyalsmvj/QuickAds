@@ -47,13 +47,13 @@ const Summary = () => {
   };
 
   return (
-    <div className="p-4">
-      <Link href="/" className="rounded m-2 p-2 border w-max fixed bg-slate-300">
+    <div className="p-4 flex items-center justify-center flex-col">
+      <Link href="/" className="rounded m-2 p-2 border w-max fixed left-0 top-0 bg-slate-300">
         <IoArrowBackOutline />
       </Link>
 
-      <h1 className="text-4xl font-bold text-center mt-8">Executive Summary</h1>
-      <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow-md">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mt-8">Executive Summary</h1>
+      <div className="mt-8 m-4 p-4 bg-gray-100 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Summary</h2>
         {summaryLines.map((line, index) => (
           <p key={index} className={`text-base ${index < 3 || showFullSummary ? '' : 'hidden'}`}>

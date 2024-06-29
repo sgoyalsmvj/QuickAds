@@ -20,17 +20,17 @@ const CompanyDetails = ({ companyData }) => {
             src={companyData.data.brand.thumbnail}
             alt={companyData.data.brand.name}
           />
-          <h1 className="text-3xl font-bold">{companyData.data.brand.name}</h1>
+          <h1 className="text-3xl  font-bold">{companyData.data.brand.name}</h1>
         </div>
 
-        <p className="mt-3 mx-3 text-center flex items-center justify-center">
+        <p className="mt-3 mx-3 text-left flex items-center justify-center">
           {companyData.data.brand.description.split(".")[0]}
           <button className="mx-2 text-sm text-slate-500" onClick={handleViewmore}>
             {viewmore ? "View Less" : " View More"}
           </button>
         </p>
         {viewmore && (
-          <div className="flex flex-col text-center">
+          <div className="mx-3 flex flex-col text-left">
             {companyData.data.brand.description.split(".").slice(1)}
             <br />
           </div>

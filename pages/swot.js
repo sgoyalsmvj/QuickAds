@@ -7,9 +7,14 @@ import { IoArrowBackOutline } from "react-icons/io5";
 
 const Swot = () => {
   const [showFullSummary, setShowFullSummary] = useState(false);
+  const [getDetails, setGetDetails] = useState(false);
 
   const toggleSummary = () => {
     setShowFullSummary(!showFullSummary);
+  };
+
+  const toggleDetails = () => {
+    setGetDetails(!getDetails); // Corrected to use a function for setting state
   };
 
   const summary = `
@@ -44,18 +49,18 @@ The radar chart reveals key differences between Traya Health and its competitors
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 flex flex-col items-center justify-center">
       <Link
-        className="rounded m-2 p-2 border w-max fixed bg-slate-300"
+        className="rounded m-2 p-2 border w-max fixed left-0 top-0 bg-slate-300"
         href="/"
       >
         <IoArrowBackOutline />
       </Link>
-      <div>
+      <div className="w-full  flex flex-col justify-center items-center">
         <h1 className="text-4xl font-bold text-center mt-8">
-          Competitor Video Analysis{" "}
+          Competitor Video Analysis
         </h1>
-        <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow-md">
+        <div className="mt-8 p-4 max-w-screen-lg bg-gray-100 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold mb-4">Summary</h2>
           {formatSummary(showFullSummary ? summary : shortSummary)}
           {summary.split("\n").length > 2 && (
@@ -67,12 +72,23 @@ The radar chart reveals key differences between Traya Health and its competitors
             </button>
           )}
         </div>
-
-        <div className="flex items-center justify-around w-full mt-8">
-          <SpiderChart />
-          <Insights />
-        </div>
         <RemainingPropertiesTable />
+        <button
+          onClick={toggleDetails} // Corrected to use toggleDetails function
+          className="mt-4 px-4 py-2 bg-blue-400 text-black hover:text-white rounded-full hover:bg-blue-700 transition duration-200"
+        >
+          {getDetails ? "Hide Details" : "Show Details"}
+        </button>
+        {getDetails && (
+          <div className="flex flex-col md:flex-row items-center justify-around w-full mt-8">
+            <div className="w-full md:w-1/2">
+              <SpiderChart />
+            </div>
+            <div className="w-full md:w-1/2">
+              <Insights />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

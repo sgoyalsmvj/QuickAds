@@ -40,9 +40,9 @@ const AdSpend = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 flex items-center flex-col justify-center w-full">
       <Link
-        className="rounded m-2 p-2 border w-max fixed bg-slate-300"
+        className="rounded m-2 p-2 border w-max fixed top-0 left-0 bg-slate-300"
         href="/"
       >
         <IoArrowBackOutline />

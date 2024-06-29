@@ -71,7 +71,7 @@ const SpiderChart = () => {
   };
 
   return (
-    <div className="w-1/2">
+    <div >
       <Radar data={data} options={options} />
     </div>
   );
