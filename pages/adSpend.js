@@ -23,7 +23,7 @@ const AdSpend = () => {
   const shortSummary = summaryLines.slice(0, 3).join("\n");
 
   return (
-    <div className="p-4 flex items-center flex-col justify-center w-full">
+    <div className="p-4 flex  flex-col justify-center w-full">
       <Link
         className="rounded m-2 p-2 border w-max fixed top-0 left-0 bg-slate-300"
         href="/"

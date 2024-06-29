@@ -1,3 +1,4 @@
+/* Importing Poppins font and Tailwind CSS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 @tailwind base;
@@ -8,7 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* CompanyDetails.css */
+/* Tooltip styles */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -21,7 +22,7 @@ body {
   width: max-content;
   background-color: #9f9d9d;
   color: #fff;
-  text-align: left;
+  text-align: center;
   padding: 5px 4px;
   border-radius: 6px;
   position: absolute;
