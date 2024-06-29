@@ -51,22 +51,22 @@ const ButtonContainer = () => {
         isDisable={false}
         logo={logo4}
       />
-      <div className="w-24 md:w-48 h-1 bg-black md:inline hidden"></div>
-      <ArrowComponent />
-      <div className="flex flex-col items-center space-y-3">
-        <ButtonComponent
-          href="/adSpend"
-          text="Ad Spend & Effectiveness"
-          isDisable={false}
-          logo={logo1}
-        />
-        <ButtonComponent
-          href="/swot"
-          text="Competitor Video Analytics"
-          logo={logo2}
-          isDisable={false}
-        />
-      </div>
+      {/* <div className="w-24 md:w-48 h-1 bg-black md:flex hidden"></div>
+      <ArrowComponent /> */}
+      {/* <div className="flex flex-col items-center space-y-3"> */}
+      <ButtonComponent
+        href="/adSpend"
+        text="Ad Spend & Effectiveness"
+        isDisable={false}
+        logo={logo1}
+      />
+      <ButtonComponent
+        href="/swot"
+        text="Competitor Video Analytics"
+        logo={logo2}
+        isDisable={false}
+      />
+      {/* </div> */}
     </div>
   );
 };

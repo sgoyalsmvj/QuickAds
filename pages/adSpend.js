@@ -11,33 +11,16 @@ const AdSpend = () => {
     setShowFullSummary(!showFullSummary);
   };
 
-  const summary = `Traya Health shows significant
-   improvement in ad effectiveness, increasing from 18 to over 28 views per dollar over four weeks.
-    Despite lower spending compared to SkinKraft, Traya's ads are more efficient.
-     Traya's average spend per creative is the highest at over $25K, indicating a focus on quality.
-      Traya exclusively targets the US market with 965 campaigns.
-       In contrast, SkinKraft has high spend but stable effectiveness, with a minor presence in China, while Vedix maintains 
-       low spend with slight effectiveness decline but a more diverse international presence. Traya should continue optimizing 
-       ad spend and consider international expansion.`;
+  const summary = `Traya Health shows significant improvement in ad effectiveness, increasing from 18 to over 28 views per dollar over four weeks.\n
+    Despite lower spending compared to SkinKraft, Traya's ads are more efficient.\n
+    Traya's average spend per creative is the highest at over $25K, indicating a focus on quality.\n
+    Traya exclusively targets the US market with 965 campaigns.\n
+    In contrast, SkinKraft has high spend but stable effectiveness, with a minor presence in China, while Vedix maintains low spend with slight effectiveness decline but a more diverse international presence.\n 
+    Traya should continue optimizing ad spend and consider international expansion.\n`;
 
-  const summaryLines = summary.split("\n");
+  const summaryLines = summary.split("\n").filter(line => line.trim() !== ''); // Filter out empty lines
 
   const shortSummary = summaryLines.slice(0, 3).join("\n");
-
-  const formatLine = (line) => {
-    const colonIndex = line.indexOf(":");
-    if (colonIndex !== -1) {
-      const beforeColon = line.slice(0, colonIndex + 1); // Include colon in bold part
-      const afterColon = line.slice(colonIndex + 1);
-      return (
-        <>
-          <span className="font-bold">{beforeColon}</span>
-          {afterColon}
-        </>
-      );
-    }
-    return line;
-  };
 
   return (
     <div className="p-4 flex items-center flex-col justify-center w-full">
@@ -52,16 +35,13 @@ const AdSpend = () => {
       </h1>
       <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Summary</h2>
-        {summaryLines.map((line, index) => (
-          <p
-            key={index}
-            className={`text-base ${
-              index < 3 || showFullSummary ? "" : "hidden"
-            }`}
-          >
-            {formatLine(line)}
-          </p>
-        ))}
+        <ul className="list-disc list-inside">
+          {summaryLines.map((line, index) => (
+            <li key={index} className={`text-base ${index < 3 || showFullSummary ? "" : "hidden"}`}>
+              {line.trim()}
+            </li>
+          ))}
+        </ul>
         {summaryLines.length > 3 && (
           <button
             className="mt-4 px-4 py-2 bg-blue-400 text-black hover:text-white rounded-full hover:bg-blue-700 transition duration-200"

@@ -11,21 +11,20 @@ const Summary = () => {
   };
 
   const summary = `
-    Traya Health excels in leveraging celebrity endorsements and creating emotional impact but needs to enhance scientific credibility and product focus.
+    Traya Health excels in leveraging celebrity endorsements and creating emotional impact but needs to enhance scientific credibility and product focus.\n
     
-    Improvement Areas:
     
-    What to Improve: Enhance scientific credibility.
-    How to Improve: Integrate scientific data and expert testimonials alongside celebrity endorsements.
-    Where Competitors Are Better: Competitors like SkinKraft and Vedix provide more personalized and scientifically backed claims.
+     What to Improve: Enhance scientific credibility.\n
+     How to Improve: Integrate scientific data and expert testimonials alongside celebrity endorsements.\n
+     Where Competitors Are Better: Competitors like SkinKraft and Vedix provide more personalized and scientifically backed claims.\n
     
-    \nWhat to Improve: Balance focus between celebrity and product.
-    How to Improve: Ensure ads highlight product benefits as much as the celebrity endorsement.
-    Where Competitors Are Better: SkinKraft effectively balances personalization and product focus in their ads.
+     What to Improve: Balance focus between celebrity and product.\n
+     How to Improve: Ensure ads highlight product benefits as much as the celebrity endorsement.\n
+     Where Competitors Are Better: SkinKraft effectively balances personalization and product focus in their ads.\n
     
-    \nWhat to Improve: Highlight unique product features more prominently.
-    How to Improve: Create content that emphasizes the unique benefits and scientific backing of the product.
-    Where Competitors Are Better: Vedix highlights the uniqueness of their Ayurvedic principles alongside customer testimonials.
+     What to Improve: Highlight unique product features more prominently.\n
+     How to Improve: Create content that emphasizes the unique benefits and scientific backing of the product.\n
+     Where Competitors Are Better: Vedix highlights the uniqueness of their Ayurvedic principles alongside customer testimonials.\n
   `;
 
   const summaryLines = summary.split("\n");
@@ -34,13 +33,14 @@ const Summary = () => {
 
   const formatLine = (line) => {
     const colonIndex = line.indexOf(":");
-    if (colonIndex !== -1) {
+    if (colonIndex !== -1 && colonIndex !== 1 && colonIndex !== 2) {
       const beforeColon = line.slice(0, colonIndex + 1); // Include colon in bold part
       const afterColon = line.slice(colonIndex + 1);
       return (
-        <>
-          <span className="font-bold">{beforeColon}</span>{afterColon}
-        </>
+        <div className="flex space-x-1">
+          <li className="font-bold">{beforeColon}</li>
+          {afterColon}
+        </div>
       );
     }
     return line;
@@ -48,17 +48,27 @@ const Summary = () => {
 
   return (
     <div className="p-4 flex items-center justify-center flex-col">
-      <Link href="/" className="rounded m-2 p-2 border w-max fixed left-0 top-0 bg-slate-300">
+      <Link
+        href="/"
+        className="rounded m-2 p-2 border w-max fixed left-0 top-0 bg-slate-300"
+      >
         <IoArrowBackOutline />
       </Link>
 
-      <h1 className="text-3xl md:text-4xl font-bold text-center mt-8">Executive Summary</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-center mt-8">
+        Executive Summary
+      </h1>
       <div className="mt-8 m-4 p-4 bg-gray-100 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">Summary</h2>
         {summaryLines.map((line, index) => (
-          <p key={index} className={`text-base ${index < 3 || showFullSummary ? '' : 'hidden'}`}>
+          <div
+            key={index}
+            className={`text-base ${
+              index < 3 || showFullSummary ? "" : "hidden"
+            }`}
+          >
             {formatLine(line)}
-          </p>
+          </div>
         ))}
         {summaryLines.length > 3 && (
           <button
