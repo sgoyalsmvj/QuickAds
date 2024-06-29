@@ -9,7 +9,7 @@ const ButtonComponent = ({ href, text, isDisable, logo }) => {
   return (
     <Link href={href}>
       <button
-        className={`px-4 py-2 mx-2 rounded-full h-36 w-80 border-2 border-black transition-all duration-200 ${
+        className={`px-4 py-2 mx-12 rounded-full h-36 md: w-96 border-2 border-black transition-all duration-200 ${
           isDisable
             ? "bg-gray-200 text-gray-400 shadow-3xl cursor-default"
             : "bg-orange-200 shadow-3xl hover:shadow-3xl hover:cursor-pointer"

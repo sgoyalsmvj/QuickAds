@@ -52,21 +52,33 @@ const Insights = () => {
               <td className="bg-blue-200 py-2 px-4 border-b border-gray-200">
                 {label}
               </td>
-              {data.datasets.map((dataset, colIndex) => (
-                <td
-                  key={`${dataset.label}-${colIndex}`}
-                  className={`py-2 px-4 border-b border-gray-200 ${
-                    dataset.label === "Traya Health" &&
-                    (dataset.data[rowIndex] <= 5
-                      ? "text-red-500 font-bold"
-                      : dataset.data[rowIndex] >= 8
-                      ? "text-green-500 font-bold"
-                      : "")
-                  }`}
-                >
-                  {dataset.data[rowIndex]}
-                </td>
-              ))}
+              {data.datasets.map((dataset, colIndex) => {
+                const score = dataset.data[rowIndex];
+                let cellClassName = "py-2 px-4 border-b border-gray-200";
+                if (dataset.label === "Traya Health") {
+                  if (score <= 5) {
+                    cellClassName += " text-red-500 font-bold tooltip";
+                  } else if (score >= 8) {
+                    cellClassName += " text-green-500 font-bold tooltip";
+                  }
+                }
+                return (
+                  <td
+                    key={`${dataset.label}-${colIndex}`}
+                    className={cellClassName}
+                  >
+                    <span>{score}</span>
+                    {((dataset.label === "Traya Health" && score <= 5) ||
+                      (dataset.label === "Traya Health" && score >= 8)) && (
+                      <span className="tooltip-text">
+                        {score <= 5
+                          ? "Score suggests room for improvement."
+                          : "High score indicates strength in this area."}
+                      </span>
+                    )}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>
