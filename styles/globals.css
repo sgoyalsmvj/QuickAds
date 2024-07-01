@@ -1,14 +1,28 @@
 /* Importing Poppins font and Tailwind CSS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
 
+.coolBg {
+  background-image: url("https://d19ep7nqjvgj4d.cloudfront.net/adgen-fe/editor_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.coolButton {
+  background: linear-gradient(
+    92.84deg,
+    rgb(105, 56, 239) 9.08%,
+    rgba(124, 49, 167, 0.99) 115.99%
+  );
+  color: white;
+}
 /* Tooltip styles */
 .tooltip {
   position: relative;

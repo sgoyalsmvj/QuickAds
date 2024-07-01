@@ -14,27 +14,27 @@ const ImprovementTable = () => {
     <div className="p-4">
       <h1 className="text-3xl font-bold text-center mb-8">Summary Table</h1>
       <div className="overflow-x-auto">
-        <div className="overflow-y-auto max-h-[400px]">
-          <table className="min-w-full bg-white border border-gray-300">
-            <thead>
+        <div className="max-h-[500px]">
+          <table className="min-w-full bg-white border  border-gray-300">
+            <thead className="coolButton">
               <tr>
-                <th className="py-2 px-4 border-b border-gray-300 bg-blue-300">
+                <th className="py-2 px-4 border-b border-gray-300">
                   Company
                 </th>
-                <th className="py-2 px-4 border-b border-gray-300 bg-blue-300">
+                <th className="py-2 px-4 border-b border-gray-300">
                   Strengths
                 </th>
-                <th className="py-2 px-4 border-b border-gray-300 bg-blue-300">
+                <th className="py-2 px-4 border-b border-gray-300">
                   Weakness
                 </th>
-                <th className="py-2 px-4 border-b border-gray-300 bg-blue-300">
+                <th className="py-2 px-4 border-b border-gray-300">
                   Ideas for Improvement
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="py-2 px-4 border-b bg-blue-300 border-gray-300">
+                <td className="py-2 px-4 border-b  text-center font-bold border-gray-300">
                   Vedix
                 </td>
                 <td className="px-7 border-b border-gray-300">
@@ -50,7 +50,7 @@ const ImprovementTable = () => {
                 <td className="py-2 px-4 border-b border-gray-300">
                   Lack of visual proof of effectiveness
                 </td>
-                <td className="py-2 px-4 border-b border-gray-300">
+                <td className="py-2 px-4 border-b border-gray-300 max-h-20 overflow-y-auto">
                   <div className="flex flex-col">
                     <span>
                       <b>Before and After Comparisons:</b>
@@ -61,34 +61,34 @@ const ImprovementTable = () => {
                     </span>
                     <span>
                       <b>Original Transcription:</b> "I've been using Vedix for
-                      the past three months, and I've seen a significant reduction
-                      in my hair fall."
+                      the past three months, and I've seen a significant
+                      reduction in my hair fall."
                     </span>
                     {showMoreVedix && (
-                      <div className="flex flex-col">
+                      <div className="flex flex-col mt-2">
                         <span>
-                          <b>Improved Scene:</b> Show before and after images of
-                          the user's hair. "Meet Priya, who struggled with hair
-                          fall. After using Vedix, she saw a 70% reduction in just
-                          3 months. See the transformation yourself!"
+                          <b>Improved Scene:</b> Show before and after images
+                          of the user's hair. "Meet Priya, who struggled with
+                          hair fall. After using Vedix, she saw a 70% reduction
+                          in just 3 months. See the transformation yourself!"
                         </span>
                         <span>
                           <b>Scientific Backing:</b>
                         </span>
                         <span>
-                          <b>Original Scene:</b> The ad briefly mentions the use
-                          of Ayurvedic ingredients.
+                          <b>Original Scene:</b> The ad briefly mentions the
+                          use of Ayurvedic ingredients.
                         </span>
                         <span>
-                          <b>Original Transcription:</b> "Vedix uses the power of
-                          Ayurveda to treat your hair issues."
+                          <b>Original Transcription:</b> "Vedix uses the power
+                          of Ayurveda to treat your hair issues."
                         </span>
                         <span>
                           <b>Improved Scene:</b> Include a dermatologist
                           explaining the science behind Vedix products. "Dr.
                           Mehta, a renowned dermatologist, explains how Vedix's
-                          unique formula combines Ayurveda with modern science for
-                          effective hair care."
+                          unique formula combines Ayurveda with modern science
+                          for effective hair care."
                         </span>
                       </div>
                     )}
@@ -102,7 +102,7 @@ const ImprovementTable = () => {
                 </td>
               </tr>
               <tr>
-                <td className="py-2 px-4 border-b bg-blue-300 border-gray-300">
+                <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
                   SkinKraft
                 </td>
                 <td className="px-7 border-b border-gray-300">
@@ -117,7 +117,7 @@ const ImprovementTable = () => {
                 <td className="py-2 px-4 border-b border-gray-300">
                   Generic voiceover and lack of specific user stories
                 </td>
-                <td className="py-2 px-4 border-b border-gray-300">
+                <td className="py-2 px-4 border-b border-gray-300 max-h-20 overflow-y-auto">
                   <div className="flex flex-col">
                     <span>
                       <b>User Testimonials:</b>
@@ -131,7 +131,7 @@ const ImprovementTable = () => {
                       personalized skincare solutions for every skin type."
                     </span>
                     {showMoreSkinKraft && (
-                      <div className="flex flex-col">
+                      <div className="flex flex-col mt-2">
                         <span>
                           <b>Improved Scene:</b> Show a diverse group of users,
                           each sharing their personalized SkinKraft experience.
@@ -144,36 +144,37 @@ const ImprovementTable = () => {
                           <b>Scientific Backing:</b>
                         </span>
                         <span>
-                          <b>Original Scene:</b> A brief mention of dermatologists
-                          without any visual support.
+                          <b>Original Scene:</b> A brief mention of
+                          dermatologists without any visual support.
                         </span>
                         <span>
-                          <b>Original Transcription:</b> "SkinKraft's products are
-                          recommended by dermatologists."
+                          <b>Original Transcription:</b> "SkinKraft's products
+                          are recommended by dermatologists."
                         </span>
                         <span>
                           <b>Improved Scene:</b> Include a dermatologist
                           explaining the science behind SkinKraft products. "Dr.
                           Mehta, a renowned dermatologist, explains how
-                          SkinKraft's unique algorithm personalizes products based
-                          on your skin's needs, backed by cutting-edge research."
+                          SkinKraft's unique algorithm personalizes products
+                          based on your skin's needs, backed by cutting-edge
+                          research."
                         </span>
                         <span>
                           <b>Interactive Elements:</b>
                         </span>
                         <span>
-                          <b>Original Scene:</b> The ad ends with a simple call to
-                          action to visit the website.
+                          <b>Original Scene:</b> The ad ends with a simple call
+                          to action to visit the website.
                         </span>
                         <span>
-                          <b>Original Transcription:</b> "Visit our website to get
-                          your customized skincare regimen."
+                          <b>Original Transcription:</b> "Visit our website to
+                          get your customized skincare regimen."
                         </span>
                         <span>
                           <b>Improved Scene:</b> Incorporate an interactive
-                          element like a quiz. "Discover your skin's unique needs
-                          with our quick skin quiz. Visit our website to get
-                          started on your personalized journey today!"
+                          element like a quiz. "Discover your skin's unique
+                          needs with our quick skin quiz. Visit our website to
+                          get started on your personalized journey today!"
                         </span>
                       </div>
                     )}
@@ -187,7 +188,7 @@ const ImprovementTable = () => {
                 </td>
               </tr>
               <tr>
-                <td className="py-2 px-4 border-b bg-blue-300 border-gray-300">
+                <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
                   Traya Health
                 </td>
                 <td className="px-7 border-b border-gray-300">
@@ -202,7 +203,7 @@ const ImprovementTable = () => {
                 <td className="py-2 px-4 border-b border-gray-300">
                   Lack of visual comparisons and user testimonials
                 </td>
-                <td className="py-2 px-4 border-b border-gray-300">
+                <td className="py-2 px-4 border-b border-gray-300 max-h-20 overflow-y-auto">
                   <div className="flex flex-col">
                     <span>
                       <b>Before and After Comparisons:</b>
@@ -216,7 +217,7 @@ const ImprovementTable = () => {
                       Health products and my hair feels much better."
                     </span>
                     {showMoreTraya && (
-                      <div className="flex flex-col">
+                      <div className="flex flex-col mt-2">
                         <span>
                           <b>Improved Scene:</b> Show Sunil Grover's before and
                           after hair transformation. "Watch Sunil Grover's
@@ -237,10 +238,10 @@ const ImprovementTable = () => {
                         </span>
                         <span>
                           <b>Improved Scene:</b> Include testimonials from other
-                          users as well. "Meet Arjun, who regained his confidence
-                          with Traya Health. 'I never thought I'd see such
-                          improvement,' he shares, showing his before and after
-                          photos."
+                          users as well. "Meet Arjun, who regained his
+                          confidence with Traya Health. 'I never thought I'd see
+                          such improvement,' he shares, showing his before and
+                          after photos."
                         </span>
                       </div>
                     )}

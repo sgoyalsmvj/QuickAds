@@ -24,7 +24,7 @@ export const getStaticProps = async () => {
 };
 const Vedix = ({ companyData, videosData }) => {
   return (
-    <div className="flex flex-col dark:bg-dark-background dark:text-dark-text">
+    <div className="flex flex-col dark:bg-dark-background dark:text-dark-text coolBg">
       <Link
         className="rounded m-2 p-2 border w-max fixed bg-slate-300"
         href="/"

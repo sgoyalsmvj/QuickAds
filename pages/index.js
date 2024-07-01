@@ -14,7 +14,9 @@ import ComparisonTable, {
 } from "@/components/ComparisonTable";
 import dynamic from "next/dynamic";
 import { useState } from "react";
-
+import skinkraft from '@/public/images/skinkraft.png';
+import traya from '@/public/images/traya.jpeg';
+import vedix from '@/public/images/vedix.jpeg';
 const SpiderChart = dynamic(() => import("../components/SpiderChart"), {
   ssr: false,
 });
@@ -34,19 +36,20 @@ export const getStaticProps = async () => {
 
 import data from "@/datafiles/contentData";
 import ButtonContainer from "@/components/ButtonComponent";
+import Image from "next/image";
 
 export default function Home({ companyData, videosData }) {
   return (
-    <div className="flex flex-col justify-center items-center overflow-x-hidden p-4">
+    <div className="flex flex-col justify-center items-center overflow-x-hidden p-4 coolBg">
       <h1 className="text-center text-4xl font-bold p-3">Competition Analysis</h1>
       <div className="flex flex-col md:flex-row justify-around text-center text-xl mt-5 mb-5 space-y-5 md:space-y-0 w-full">
         <Link
-          className="w-full md:w-1/4 rounded-[3rem] hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-red-200 border-2 border-gray-600"
+          className="w-full md:w-1/4 rounded-[1rem] transform transition duration-300 hover:scale-105 hover:shadow-xl  hover:ring-2 hover:ring-red-400 flex flex-col items-center justify-center text-left p-3 bg-red-200 border-2 border-gray-200"
           href="/SkinKraftPage"
         >
-          <img
+          <Image
             className="border border-slate-800 rounded-lg m-3 w-[150px]"
-            src="https://yt3.ggpht.com/ytc/AOPolaSg5GeuKEacZOoKCQVvq7hatgj6QKRfuZBc76euWg=s88-c-k-c0x00ffffff-no-rj"
+            src={skinkraft}
             alt="Skinkraft"
           />
           <p className="m-2 text-sm">
@@ -56,11 +59,11 @@ export default function Home({ companyData, videosData }) {
 
         <Link
           href="/TrayaHealthPage"
-          className="w-full md:w-1/4 rounded-[3rem] hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-blue-200 border-2 border-black"
+          className="w-full md:w-1/4 rounded-[1rem] transform transition duration-300 hover:scale-105 hover:shadow-xl  hover:ring-2 hover:ring-blue-400 flex flex-col items-center justify-center text-left p-3 bg-blue-200 border-2 border-gray-200"
         >
-          <img
+          <Image
             className="border border-slate-800 shadow-2xl rounded-lg m-3 w-[150px]"
-            src="https://yt3.ggpht.com/ytc/AOPolaR8m3ZGhVrUlcR5ziohWRSQvPJBg2TTz0mXoscp=s88-c-k-c0x00ffffff-no-rj"
+            src={traya}
             alt="Traya Health"
           />
           <p className="m-2 text-sm">
@@ -70,11 +73,11 @@ export default function Home({ companyData, videosData }) {
 
         <Link
           href="/VedixPage"
-          className="w-full md:w-1/4 rounded-[3rem] hover:shadow-md shadow-lg flex flex-col items-center justify-center text-left p-3 bg-red-200 border-2 border-gray-600"
+          className="w-full md:w-1/4 rounded-[1rem] transform transition duration-300 hover:scale-105 hover:shadow-xl  hover:ring-2 hover:ring-red-400 flex flex-col items-center justify-center text-left p-3 bg-red-200 border-2 border-gray-200"
         >
-          <img
+          <Image
             className="border border-slate-800 rounded-lg m-3 w-[150px]"
-            src="https://yt3.ggpht.com/ytc/AOPolaQiqV1SxgrOn3bCv6j-VeWEmDeb4wjHY8L-XOYj=s88-c-k-c0x00ffffff-no-rj"
+            src={vedix}
             alt="Vedix"
           />
           <p className="m-2 text-sm">

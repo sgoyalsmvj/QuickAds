@@ -44,7 +44,7 @@ const AdSpend = () => {
         </ul>
         {summaryLines.length > 3 && (
           <button
-            className="mt-4 px-4 py-2 bg-blue-400 text-black hover:text-white rounded-full hover:bg-blue-700 transition duration-200"
+            className="mt-4 px-4 py-2 coolButton text-center text-black hover:text-white rounded-full hover:bg-blue-700 transition duration-200"
             onClick={toggleSummary}
           >
             {showFullSummary ? "View Less" : "View More"}

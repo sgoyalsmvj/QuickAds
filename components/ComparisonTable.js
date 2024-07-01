@@ -104,7 +104,7 @@ const StrengthWeaknessSuggestionTable = () => {
     <div className="md:p-5 w-1/2">
       <div className="overflow-x-auto">
         <table className="table-auto w-full rounded-lg shadow-lg text-center dark:bg-gray-800 dark:text-gray-200">
-          <thead className="bg-blue-200 dark:bg-gray-700">
+          <thead className=" coolButton text-center dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Company</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Strengths</th>
@@ -141,7 +141,7 @@ const RemainingPropertiesTable = () => {
     <div className="py-4 w-full">
       <div className="overflow-x-auto">
         <table className="table-auto w-full rounded-lg shadow-lg dark:bg-gray-800 dark:text-gray-200">
-          <thead className="bg-blue-200 dark:bg-gray-700">
+          <thead className=" coolButton text-center bg-blue-200 dark:bg-gray-700">
             <tr>
               <th className="px-2 py-1 md:px-4 md:py-2">Parameter</th>
               <th className="px-2 py-1 md:px-4 md:py-2">Traya Health</th>
@@ -155,7 +155,7 @@ const RemainingPropertiesTable = () => {
                 key={index}
                 className="text-sm md:text-base border dark:border-gray-700"
               >
-                <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 bg-blue-200">
+                <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200 font-bold">
                   {data.Parameter}
                 </td>
                 <td className="px-2 py-1 md:px-4 md:py-2 text-gray-900 dark:text-gray-200">

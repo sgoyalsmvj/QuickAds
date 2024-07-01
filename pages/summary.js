@@ -87,7 +87,7 @@ By incorporating visual comparisons and diverse testimonials, Traya Health can e
   };
 
   return (
-    <div className="p-4 flex items-center justify-center flex-col">
+    <div className="p-4 flex items-center justify-center flex-col coolBg">
       <Link
         href="/"
         className="rounded m-2 p-2 border w-max fixed left-0 top-0 bg-slate-300"
@@ -98,7 +98,7 @@ By incorporating visual comparisons and diverse testimonials, Traya Health can e
       <h1 className="text-3xl md:text-4xl font-bold text-center mt-8">
         Executive Summary
       </h1>
-      <div className="mt-8 m-4 p-4 bg-gray-100 rounded-lg shadow-md">
+      <div className="mt-8 m-4 p-4 bg-gray-100 rounded-lg shadow-md overflow-y-auto max-h-[600px]">
         <h2 className="text-2xl font-bold mb-4">Summary</h2>
         <ul>
           {summaryLines
@@ -107,7 +107,7 @@ By incorporating visual comparisons and diverse testimonials, Traya Health can e
         </ul>
         {summaryLines.length > 10 && (
           <button
-            className="mt-4 px-4 py-2 bg-blue-400 text-black hover:text-white rounded-full hover:bg-blue-700 transition duration-200"
+            className="mt-4 px-4 py-2 bg-blue-400 coolButton text-black hover:text-white rounded-full hover:bg-blue-700 transition duration-200"
             onClick={toggleSummary}
           >
             {showFullSummary ? "View Less" : "View More"}

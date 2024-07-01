@@ -13,7 +13,7 @@ const CompanyDetails = ({ companyData }) => {
 
   return (
     <main className="dark:bg-dark-background dark:text-dark-text">
-      <div className="flex flex-col items-center justify-center p-5 bg-slate-200 dark:bg-gray-800 w-full md:space-x-2">
+      <div className="flex flex-col items-center justify-center p-5 bg-[#f4f3ff] dark:bg-gray-800 w-full md:space-x-2">
         <div className="flex space-x-3 justify-center items-center">
           <img
             className="rounded-full w-[50px]"
@@ -23,18 +23,23 @@ const CompanyDetails = ({ companyData }) => {
           <h1 className="text-3xl  font-bold">{companyData.data.brand.name}</h1>
         </div>
 
-        <p className="mt-3 mx-3 text-left flex items-center justify-center">
-          {companyData.data.brand.description.split(".")[0]}
-          <button className="mx-2 text-sm text-slate-500" onClick={handleViewmore}>
-            {viewmore ? "View Less" : " View More"}
-          </button>
-        </p>
-        {viewmore && (
-          <div className="mx-3 flex flex-col text-left">
-            {companyData.data.brand.description.split(".").slice(1)}
-            <br />
-          </div>
-        )}
+        <div className="w-2/3">
+          <p className="mt-3 mx-3 text-left flex items-center justify-center">
+            {companyData.data.brand.description.split(".")[0]}
+            <button
+              className="mx-2 text-sm text-slate-500"
+              onClick={handleViewmore}
+            >
+              {viewmore ? "View Less" : " View More"}
+            </button>
+          </p>
+          {viewmore && (
+            <div className="mx-3 flex flex-col text-left">
+              {companyData.data.brand.description.split(".").slice(1)}
+              <br />
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-col items-center justify-around p-5 md:flex-row">
@@ -44,7 +49,9 @@ const CompanyDetails = ({ companyData }) => {
               Average Duration{" "}
               <span className="tooltip">
                 <GoQuestion className="question-icon" />
-                <span className="tooltip-text">Average duration of videos uploaded by the company</span>
+                <span className="tooltip-text">
+                  Average duration of videos uploaded by the company
+                </span>
               </span>
             </h1>
             <p className="font-bold">
@@ -56,7 +63,9 @@ const CompanyDetails = ({ companyData }) => {
               Total Creative Count{" "}
               <span className="tooltip">
                 <GoQuestion className="question-icon" />
-                <span className="tooltip-text">Total number of creative assets produced by the company</span>
+                <span className="tooltip-text">
+                  Total number of creative assets produced by the company
+                </span>
               </span>
             </h1>
             <p className="font-bold">{companyData.data.creativeCount}</p>
@@ -68,7 +77,9 @@ const CompanyDetails = ({ companyData }) => {
               Ad spend In Last Year{" "}
               <span className="tooltip">
                 <GoQuestion className="question-icon" />
-                <span className="tooltip-text">Advertising expenditure in the last year</span>
+                <span className="tooltip-text">
+                  Advertising expenditure in the last year
+                </span>
               </span>
             </h1>
             <p className="font-bold">
@@ -80,12 +91,20 @@ const CompanyDetails = ({ companyData }) => {
               Global rank{" "}
               <span className="tooltip">
                 <GoQuestion className="question-icon" />
-                <span className="tooltip-text">Global ranking of the company</span>
+                <span className="tooltip-text">
+                  Global ranking of the company
+                </span>
               </span>
             </h1>
             <p className="font-bold">
               #{companyData.data.ranks.global.rank}{" "}
-              <span className={companyData.data.ranks.global.change >= 0 ? "text-green-500" : "text-red-500"}>
+              <span
+                className={
+                  companyData.data.ranks.global.change >= 0
+                    ? "text-green-500"
+                    : "text-red-500"
+                }
+              >
                 {companyData.data.ranks.global.change >= 0 ? (
                   <IoMdArrowDropup className="inline" />
                 ) : (
@@ -102,12 +121,20 @@ const CompanyDetails = ({ companyData }) => {
               Country rank{" "}
               <span className="tooltip">
                 <GoQuestion className="question-icon" />
-                <span className="tooltip-text">Country-specific ranking of the company</span>
+                <span className="tooltip-text">
+                  Country-specific ranking of the company
+                </span>
               </span>
             </h1>
             <p className="font-bold">
               #{companyData.data.ranks.country.rank}{" "}
-              <span className={companyData.data.ranks.country.change >= 0 ? "text-green-500" : "text-red-500"}>
+              <span
+                className={
+                  companyData.data.ranks.country.change >= 0
+                    ? "text-green-500"
+                    : "text-red-500"
+                }
+              >
                 {companyData.data.ranks.country.change >= 0 ? (
                   <IoMdArrowDropup className="inline" />
                 ) : (
@@ -122,12 +149,20 @@ const CompanyDetails = ({ companyData }) => {
               Category rank{" "}
               <span className="tooltip">
                 <GoQuestion className="question-icon" />
-                <span className="tooltip-text">Category-specific ranking of the company</span>
+                <span className="tooltip-text">
+                  Category-specific ranking of the company
+                </span>
               </span>
             </h1>
             <p className="font-bold">
               #{companyData.data.ranks.category.rank}{" "}
-              <span className={companyData.data.ranks.category.change >= 0 ? "text-green-500" : "text-red-500"}>
+              <span
+                className={
+                  companyData.data.ranks.category.change >= 0
+                    ? "text-green-500"
+                    : "text-red-500"
+                }
+              >
                 {companyData.data.ranks.category.change >= 0 ? (
                   <IoMdArrowDropup className="inline" />
                 ) : (

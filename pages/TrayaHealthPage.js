@@ -24,7 +24,7 @@ export const getStaticProps = async () => {
 };
 const Traya = ({ companyData, videosData }) => {
   return (
-    <div className="flex flex-col dark:bg-dark-background dark:text-dark-text">
+    <div className="flex flex-col dark:bg-dark-background dark:text-dark-text coolBg">
       <Link className="rounded m-2 p-2 border w-max fixed bg-slate-300" href='/'><IoArrowBackOutline /></Link>
       <CompanyDetails  companyData={companyData} />
       <h1 className="p-5 m-2 font-bold text-2xl">
