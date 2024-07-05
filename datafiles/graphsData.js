@@ -1,6 +1,7 @@
 import SkinkraftData from "../datafiles/SkinKraft1.json";
 import TrayaData from "../datafiles/TrayaHealth1.json";
 import VedixData from "../datafiles/Vedix1.json";
+import TrayaHairData from "../datafiles/TrayaHairHealth1.json";
 // console.log(SkinkraftData);
 function getViewsAndSpend(data) {
   const views = [];
@@ -103,6 +104,31 @@ export const trayabarChartData = {
   ],
 };
 
+export const trayahairlineChartData = {
+  labels: commonLabels,
+  datasets: [
+    {
+      label: "Ad Spend",
+      data: getViewsAndSpend(TrayaHairData).spend,
+      fill: false,
+      backgroundColor: "rgba(75,192,192,1)",
+      borderColor: "rgba(75,192,192,1)",
+    },
+  ],
+};
+
+export const trayahairbarChartData = {
+  labels: commonLabels,
+  datasets: [
+    {
+      label: "Views",
+      data: getViewsAndSpend(TrayaHairData).views,
+      backgroundColor: "rgba(153, 102, 255, 0.2)",
+      borderColor: "rgba(153, 102, 255, 1)",
+      borderWidth: 1,
+    },
+  ],
+};
 // export const viewsVsSpendChartData = (viewsData, spendData) => ({
 //   labels: commonLabels,
 //   datasets: [
@@ -170,6 +196,10 @@ export const vedixLineData = prepareLineData(
 export const trayaLineData = prepareLineData(
   getViewsAndSpend(TrayaData).views,
   getViewsAndSpend(TrayaData).spend
+);
+export const trayahairLineData = prepareLineData(
+  getViewsAndSpend(TrayaHairData).views,
+  getViewsAndSpend(TrayaHairData).spend
 );
 
 import SkinKraftData2 from "@/datafiles/SkinKraft2.json";

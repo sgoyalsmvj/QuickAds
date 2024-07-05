@@ -1,0 +1,78 @@
+{
+    "data": {
+        "page": 1,
+        "hasMore": true,
+        "results": [
+            {
+                "ytVideoId": "L035ApfE6Fg",
+                "brandId": 106487,
+                "title": "Baal Sirf Tel lagane se nahi aayega! Try Traya",
+                "description": "Traya Health | Hair Loss Solutions:\n👉 Take a Free Hair Test: https://bit.ly/3LmVEzD\n\nSubscribe to our YouTube Channel:   @TrayaHealth",
+                "duration": 40,
+                "thumbnail": "https://i.ytimg.com/vi/L035ApfE6Fg/default.jpg",
+                "category": "22",
+                "width": 300,
+                "height": 400,
+                "publishedAt": "2024-02-15T05:58:01.000Z",
+                "totalSpend": "1999445",
+                "last30Days": "344642"
+            },
+            {
+                "ytVideoId": "XigVni8EDKI",
+                "brandId": 106487,
+                "title": "rajkumar-barber-40sec",
+                "description": "Traya Health | Hair Loss Solutions:\n👉 Take a Free Hair Test: https://bit.ly/3LmVEzD",
+                "duration": 41,
+                "thumbnail": "https://i.ytimg.com/vi/XigVni8EDKI/default.jpg",
+                "category": "22",
+                "width": 300,
+                "height": 400,
+                "publishedAt": "2023-08-08T11:57:43.000Z",
+                "totalSpend": "1810596",
+                "last30Days": "252692"
+            },
+            {
+                "ytVideoId": "lYt4F27GUdI",
+                "brandId": 106487,
+                "title": "chill-hour-regrowth",
+                "description": "Traya Health | Hair Loss Solutions:\n👉 Take a Free Hair Test: https://bit.ly/3LmVEzD\n\nSubscribe to our YouTube Channel:   @TrayaHealth",
+                "duration": 75,
+                "thumbnail": "https://i.ytimg.com/vi/lYt4F27GUdI/default.jpg",
+                "category": "22",
+                "width": 300,
+                "height": 400,
+                "publishedAt": "2023-08-14T07:23:53.000Z",
+                "totalSpend": "632476",
+                "last30Days": "0"
+            },
+            {
+                "ytVideoId": "3iz5QpjtJG0",
+                "brandId": 106487,
+                "title": "Know What Really Grows your Hair?",
+                "description": "Traya Health | Hair Loss Solutions:\n👉 Take a Free Hair Test: https://bit.ly/42q635a",
+                "duration": 41,
+                "thumbnail": "https://i.ytimg.com/vi/3iz5QpjtJG0/default.jpg",
+                "category": "22",
+                "width": 300,
+                "height": 400,
+                "publishedAt": "2023-07-26T13:34:11.000Z",
+                "totalSpend": "343482",
+                "last30Days": "0"
+            },
+            {
+                "ytVideoId": "CNP56TxkUkU",
+                "brandId": 106487,
+                "title": "vishakha-stages-of-hairfall-male",
+                "description": "Traya Health | Hair Loss Solutions:\n👉 Take a Free Hair Test: https://bit.ly/3LmVEzD\n\nSubscribe to our YouTube Channel:   @TrayaHealth",
+                "duration": 96,
+                "thumbnail": "https://i.ytimg.com/vi/CNP56TxkUkU/default.jpg",
+                "category": "22",
+                "width": 300,
+                "height": 400,
+                "publishedAt": "2023-09-29T08:02:06.000Z",
+                "totalSpend": "297657",
+                "last30Days": "15920"
+            }
+        ]
+    }
+}

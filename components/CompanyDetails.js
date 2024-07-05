@@ -4,7 +4,12 @@ import { addCommasToNumber, formatTime } from "./VideosTable";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 const CompanyDetails = ({ companyData }) => {
-  const flags = ["🇺🇸", "🇨🇳", "🇮🇳", "🇧🇷", "🇷🇺"];
+  const flags = {
+    103: "🇮🇳",
+    195: "🇸🇦",
+    236: "🇦🇪",
+    83: "🇺🇸",
+  };
   const [viewmore, setViewmore] = useState(false);
 
   function handleViewmore() {
@@ -180,7 +185,7 @@ const CompanyDetails = ({ companyData }) => {
           <div className="flex flex-col mt-2 md:h-[95px] overflow-y-auto">
             {companyData.data.top5Countries.map((country, i) => (
               <div className="flex space-x-3" key={i}>
-                <h2> {flags[i]}:</h2>
+                <h2> {flags[country.countryId]}:</h2>
                 <p>{country.count}</p>
                 <p>({country.percentage.toString().split(".")[0]}%)</p>
               </div>

@@ -1,0 +1,61 @@
+{
+    "data": {
+        "brand": {
+            "brandId": 106487,
+            "name": "Traya.Health Hair",
+            "swiped": false,
+            "averageVideoDuration": 72,
+            "description": "",
+            "categoryId": 246,
+            "thumbnail": "https://yt3.ggpht.com/GOUSFPuc5SM7esUekCm7OdeSATGRvnjdwqGMnPFjYtjFh5vUY3yKW8x0AJlwsfEY9QQaWcU66w=s88-c-k-c0x00ffffff-no-rj",
+            "views": {
+                "today": 144612330,
+                "last7Days": 3583964,
+                "last14Days": 6742729,
+                "last21Days": 9637799,
+                "last30Days": 11982482,
+                "last60Days": 15903346,
+                "last90Days": 22820724,
+                "last180Days": 78192372,
+                "last365Days": 144612330,
+                "last720Days": 144612330,
+                "collected_on": "2024-07-03T20:39:59.196Z"
+            },
+            "spend": {
+                "today": 8455612,
+                "last7Days": 238153,
+                "last14Days": 447687,
+                "last21Days": 638927,
+                "last30Days": 788050,
+                "last60Days": 1006571,
+                "last90Days": 1420349,
+                "last180Days": 4977439,
+                "last365Days": 8455612,
+                "last720Days": 8455612,
+                "collected_on": "2024-07-03T20:39:59.196Z"
+            }
+        },
+        "ranks": {
+            "global": {
+                "rank": 670,
+                "change": 94
+            },
+            "country": {
+                "rank": 53,
+                "change": 7
+            },
+            "category": {
+                "rank": 1,
+                "change": 0
+            }
+        },
+        "creativeCount": 478,
+        "top5Countries": [
+            {
+                "countryId": 103,
+                "count": 1088,
+                "percentage": 100
+            }
+        ]
+    }
+}

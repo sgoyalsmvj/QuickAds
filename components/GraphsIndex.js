@@ -1,17 +1,35 @@
 import React from "react";
 import { Line, Bar } from "react-chartjs-2";
-import { CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend } from "chart.js";
+import {
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Chart as Ch } from "chart.js";
 import Campaigns from "./Campaigns";
 import SkinKraftData1 from "@/datafiles/SkinKraft1.json";
 import TrayaData1 from "@/datafiles/TrayaHealth1.json";
 import VedixData1 from "@/datafiles/Vedix1.json";
 import data from "@/datafiles/contentData";
-
-Ch.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
+import TrayaHairHealth1 from "@/datafiles/TrayaHairHealth1.json";
+Ch.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const GraphsIndex = ({ data }) => {
-  const brands = ["SkinKraft", "Traya", "Vedix"]; // Updated brand order
+  const brands = ["SkinKraft", "Traya", "TrayaHair", "Vedix"]; // Updated brand order
   const weeks = ["Week 1", "Week 2", "Week 3", "Week 4"];
 
   const formatNumber = (num) => {
@@ -26,6 +44,7 @@ const GraphsIndex = ({ data }) => {
   const darkColor = "#333"; // Dark color theme for graphs
   const skinkraftColor = "#01afc8";
   const trayaColor = "#000";
+  const trayaHairColor = "#000";
   const vedixColor = "#e3d6b4";
 
   const options1 = {
@@ -133,7 +152,7 @@ const GraphsIndex = ({ data }) => {
   const company1Data = SkinKraftData1;
   const company2Data = TrayaData1;
   const company3Data = VedixData1;
-
+  const company4Data = TrayaHairHealth1;
   const getWeeklySpendComparison = () => {
     return {
       labels: weeks,
@@ -152,6 +171,9 @@ const GraphsIndex = ({ data }) => {
         } else if (brand === "Traya") {
           backgroundColor = `rgba(0, 0, 0, 0.2)`; // #000
           borderColor = `rgba(0, 0, 0, 1)`;
+        } else if (brand === "TrayaHair") {
+          backgroundColor = `rgba(60, 179, 113,0.5)`; // #000
+          borderColor = `rgba(60, 179, 113,1)`;
         } else if (brand === "Vedix") {
           backgroundColor = `rgba(255, 0, 0,0.4)`; // #e3d6b4
           borderColor = `rgba(255, 0, 0,1)`;
@@ -192,6 +214,9 @@ const GraphsIndex = ({ data }) => {
         } else if (brand === "Traya") {
           backgroundColor = `rgba(0, 0, 0, 0.2)`; // #000
           borderColor = `rgba(0, 0, 0, 1)`;
+        } else if (brand === "TrayaHair") {
+          backgroundColor = `rgba(60, 179, 113,0.5)`; // #000
+          borderColor = `rgba(60, 179, 113,1)`;
         } else if (brand === "Vedix") {
           backgroundColor = `rgba(255, 0, 0,0.4)`; // #e3d6b4
           borderColor = `rgba(255, 0, 0,1)`;
@@ -214,19 +239,26 @@ const GraphsIndex = ({ data }) => {
         {
           label: "Average Spend per Creative",
           data: [
-            company1Data.data.brand.spend.today / company1Data.data.creativeCount,
-            company2Data.data.brand.spend.today / company2Data.data.creativeCount,
-            company3Data.data.brand.spend.today / company3Data.data.creativeCount,
+            company1Data.data.brand.spend.today /
+              company1Data.data.creativeCount,
+            company2Data.data.brand.spend.today /
+              company2Data.data.creativeCount,
+            company4Data.data.brand.spend.today /
+              company4Data.data.creativeCount,
+            company3Data.data.brand.spend.today /
+              company3Data.data.creativeCount,
           ],
           backgroundColor: [
             `rgba(1, 175, 200, 0.2)`, // #01afc8
-            `rgba(0, 0, 0, 0.2)`, // #000
-            `rgba(255, 0, 0,0.4)` // #e3d6b4
+            `rgba(0, 0, 0, 0.2)`,
+            `rgba(60, 179, 113,0.5)`, // #000
+            `rgba(255, 0, 0,0.4)`,
           ],
           borderColor: [
             `rgba(1, 175, 200, 1)`,
             `rgba(0, 0, 0, 1)`,
-            `rgba(255, 0, 0,1)`
+            `rgba(60, 179, 113,1)`,
+            `rgba(255, 0, 0,1)`,
           ],
           borderWidth: 1,
         },
@@ -254,6 +286,7 @@ const GraphsIndex = ({ data }) => {
       <div className="flex flex-col md:flex-row m-2 md:m-4  justify-around">
         <Campaigns companyData={company1Data} />
         <Campaigns companyData={company2Data} />
+        <Campaigns companyData={company4Data} />
         <Campaigns companyData={company3Data} />
       </div>
     </div>
