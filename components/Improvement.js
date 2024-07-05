@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React, { useState } from "react";
+import { LiaExternalLinkAltSolid } from "react-icons/lia";
 
 const ImprovementTable = () => {
   const [showMoreVedix, setShowMoreVedix] = useState(false);
@@ -18,15 +20,11 @@ const ImprovementTable = () => {
           <table className="min-w-full bg-white border  border-gray-300">
             <thead className="coolButton">
               <tr>
-                <th className="py-2 px-4 border-b border-gray-300">
-                  Company
-                </th>
+                <th className="py-2 px-4 border-b border-gray-300">Company</th>
                 <th className="py-2 px-4 border-b border-gray-300">
                   Strengths
                 </th>
-                <th className="py-2 px-4 border-b border-gray-300">
-                  Weakness
-                </th>
+                <th className="py-2 px-4 border-b border-gray-300">Weakness</th>
                 <th className="py-2 px-4 border-b border-gray-300">
                   Ideas for Improvement
                 </th>
@@ -35,7 +33,12 @@ const ImprovementTable = () => {
             <tbody>
               <tr>
                 <td className="py-2 px-4 border-b  text-center font-bold border-gray-300">
-                  Vedix
+                  <div className="flex justify-around items-center">
+                    Vedix{" "}
+                    <Link target="_blank" href="https://www.youtube.com/watch?v=V2ihPhKOI7I">
+                      <LiaExternalLinkAltSolid />
+                    </Link>
+                  </div>
                 </td>
                 <td className="px-7 border-b border-gray-300">
                   <ul>
@@ -67,17 +70,17 @@ const ImprovementTable = () => {
                     {showMoreVedix && (
                       <div className="flex flex-col mt-2">
                         <span>
-                          <b>Improved Scene:</b> Show before and after images
-                          of the user's hair. "Meet Priya, who struggled with
-                          hair fall. After using Vedix, she saw a 70% reduction
-                          in just 3 months. See the transformation yourself!"
+                          <b>Improved Scene:</b> Show before and after images of
+                          the user's hair. "Meet Priya, who struggled with hair
+                          fall. After using Vedix, she saw a 70% reduction in
+                          just 3 months. See the transformation yourself!"
                         </span>
                         <span>
                           <b>Scientific Backing:</b>
                         </span>
                         <span>
-                          <b>Original Scene:</b> The ad briefly mentions the
-                          use of Ayurvedic ingredients.
+                          <b>Original Scene:</b> The ad briefly mentions the use
+                          of Ayurvedic ingredients.
                         </span>
                         <span>
                           <b>Original Transcription:</b> "Vedix uses the power
@@ -103,7 +106,12 @@ const ImprovementTable = () => {
               </tr>
               <tr>
                 <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
-                  SkinKraft
+                  <div className="flex justify-around items-center">
+                    SkinKraft{" "}
+                    <Link target="_blank" href="https://www.youtube.com/watch?v=NfBu0LPInPg">
+                      <LiaExternalLinkAltSolid />
+                    </Link>
+                  </div>
                 </td>
                 <td className="px-7 border-b border-gray-300">
                   <ul>
@@ -189,7 +197,12 @@ const ImprovementTable = () => {
               </tr>
               <tr>
                 <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
-                  Traya Health
+                  <div className="flex justify-around items-center">
+                    Traya Health{" "}
+                    <Link  target="_blank" href="https://www.youtube.com/watch?v=cP2DEYovbbo">
+                      <LiaExternalLinkAltSolid />
+                    </Link>
+                  </div>
                 </td>
                 <td className="px-7 border-b border-gray-300">
                   <ul>
