@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
@@ -22,6 +23,9 @@ const ImprovementTable = () => {
               <tr>
                 <th className="py-2 px-4 border-b border-gray-300">Company</th>
                 <th className="py-2 px-4 border-b border-gray-300">
+                  Ad Creative
+                </th>
+                <th className="py-2 px-4 border-b border-gray-300">
                   Strengths
                 </th>
                 <th className="py-2 px-4 border-b border-gray-300">Weakness</th>
@@ -33,12 +37,16 @@ const ImprovementTable = () => {
             <tbody>
               <tr>
                 <td className="py-2 px-4 border-b  text-center font-bold border-gray-300">
-                  <div className="flex justify-around items-center">
-                    Vedix{" "}
-                    <Link target="_blank" href="https://www.youtube.com/watch?v=V2ihPhKOI7I">
-                      <LiaExternalLinkAltSolid />
-                    </Link>
-                  </div>
+                  <div className="flex justify-around items-center">Vedix </div>
+                </td>
+                <td className="py-2 px-4 border-b  text-center font-bold border-gray-300">
+                  <Link
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=V2ihPhKOI7I"
+                  >
+                    <img src={"https://i.ytimg.com/vi/V2ihPhKOI7I/default.jpg"}  className="rounded-lg"/>
+                    {/* <LiaExternalLinkAltSolid /> */}
+                  </Link>
                 </td>
                 <td className="px-7 border-b border-gray-300">
                   <ul>
@@ -108,10 +116,18 @@ const ImprovementTable = () => {
                 <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
                   <div className="flex justify-around items-center">
                     SkinKraft{" "}
-                    <Link target="_blank" href="https://www.youtube.com/watch?v=NfBu0LPInPg">
-                      <LiaExternalLinkAltSolid />
-                    </Link>
                   </div>
+                </td>
+                <td className="py-2 px-4 border-b  text-center font-bold border-gray-300">
+                  <Link
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=NfBu0LPInPg"
+                  >
+                    <Image/>
+                    <img src={"https://i.ytimg.com/vi/NfBu0LPInPg/default.jpg"} className="rounded-lg" />
+
+                    {/* <LiaExternalLinkAltSolid /> */}
+                  </Link>
                 </td>
                 <td className="px-7 border-b border-gray-300">
                   <ul>
@@ -199,10 +215,18 @@ const ImprovementTable = () => {
                 <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
                   <div className="flex justify-around items-center">
                     Traya Health{" "}
-                    <Link  target="_blank" href="https://www.youtube.com/watch?v=cP2DEYovbbo">
-                      <LiaExternalLinkAltSolid />
-                    </Link>
                   </div>
+                </td>
+                <td className="py-2 px-4 border-b text-center font-bold border-gray-300">
+                  <Link
+                    target="_blank"
+                    href="https://www.youtube.com/watch?v=cP2DEYovbbo"
+                  >
+                    <Image/>
+                    <img src={ "https://i.ytimg.com/vi/cP2DEYovbbo/default.jpg"} className="rounded-lg"  />
+
+                    {/* <LiaExternalLinkAltSolid /> */}
+                  </Link>
                 </td>
                 <td className="px-7 border-b border-gray-300">
                   <ul>
