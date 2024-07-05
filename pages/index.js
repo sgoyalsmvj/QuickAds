@@ -87,7 +87,7 @@ export default function Home({ companyData, videosData }) {
         </Link>
         <Link
           href="/trayahealthhair"
-          className="w-full md:w-1/5 rounded-[1rem] transform transition duration-300 hover:scale-105 hover:shadow-xl  hover:ring-2 hover:ring-blue-400 flex flex-col items-center justify-center text-left p-3 bg-blue-300 border-2 border-gray-200"
+          className="w-full md:w-1/5 rounded-[1rem] transform transition duration-300 hover:scale-105 hover:shadow-xl  hover:ring-2 hover:ring-blue-400 flex flex-col items-center justify-center text-left p-3 bg-sky-200 border-2 border-gray-200"
         >
           <Image
             className="border border-slate-800 shadow-2xl rounded-lg m-3 w-[150px]"

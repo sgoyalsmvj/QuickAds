@@ -6,10 +6,11 @@ import logo2 from "@/public/images/analytics.png";
 import logo3 from "@/public/images/executive.png";
 import logo4 from "@/public/images/strategy.png";
 import arrow from '@/public/images/Arrow.png';
+// bg-gradient-to-r from-purple-500 to-indigo-500
 const CustomButton = ({ href, title, description, logo, alt }) => {
   return (
     <Link href={href}>
-      <div className="relative h-52 md:w-96 px-6 py-4 w-full max-w-xs bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
+      <div className="relative h-52 md:w-96 px-6 py-4 w-full max-w-xs bg-indigo-400 rounded-xl shadow-md transition-transform transform hover:scale-105 cursor-pointer">
         <div className="flex flex-col justify-between h-full text-white">
           <div>
             <h2 className="text-lg font-bold">{title}</h2>
