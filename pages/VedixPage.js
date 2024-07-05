@@ -4,7 +4,7 @@ import VedixData2 from "@/datafiles/Vedix2.json";
 import VedixData3 from "@/datafiles/Vedix3.json";
 import Image from "next/image";
 import vedix1 from "@/public/images/vedix1.png";
-import vedix2 from "@/public/images/vedix2.png";
+import vedix2 from "@/public/images/Vedix2.png";
 import CompanyDetails from "@/components/CompanyDetails";
 import VideosTable from "@/components/VideosTable";
 import BarChart from "@/components/BarChart";
