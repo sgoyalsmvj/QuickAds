@@ -6,12 +6,15 @@ import { useTheme } from "@/context/themeContext";
 
 export const formatNumber = (num) => {
   if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + "M";
+    return (num / 1000000).toFixed(0) + "M";
   } else if (num >= 1000) {
-    return (num / 1000).toFixed(1) + "K";
+    // Ensure the output is always a string with a capital "K"
+    return (num / 1000).toFixed(0) + "K";
   }
-  return num;
+  // No formatting needed for numbers less than 1000
+  return num.toString();
 };
+
 
 const LineChart = ({ data }) => {
   const { darkMode } = useTheme();

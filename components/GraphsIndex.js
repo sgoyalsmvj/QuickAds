@@ -32,14 +32,17 @@ const GraphsIndex = ({ data }) => {
   const brands = ["SkinKraft", "Traya", "TrayaHair", "Vedix"]; // Updated brand order
   const weeks = ["Week 1", "Week 2", "Week 3", "Week 4"];
 
-  const formatNumber = (num) => {
+   const formatNumber = (num) => {
     if (num >= 1000000) {
-      return (num / 1000000).toFixed(1) + "M";
+      return (num / 1000000).toFixed(0) + "M";
     } else if (num >= 1000) {
-      return (num / 1000).toFixed(1) + "K";
+      // Ensure the output is always a string with a capital "K"
+      return (num / 1000).toFixed(0) + "K";
     }
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    // No formatting needed for numbers less than 1000
+    return num.toString();
   };
+  
 
   const darkColor = "#333"; // Dark color theme for graphs
   const skinkraftColor = "#01afc8";
