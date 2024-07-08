@@ -11,14 +11,20 @@ const AdSpend = () => {
     setShowFullSummary(!showFullSummary);
   };
 
-  const summary = `Traya Health shows significant improvement in ad effectiveness, increasing from 18 to over 28 views per dollar over four weeks.\n
-    Despite lower spending compared to SkinKraft, Traya's ads are more efficient.\n
-    Traya's average spend per creative is the highest at over $25K, indicating a focus on quality.\n
-    Traya exclusively targets the US market with 965 campaigns.\n
-    In contrast, SkinKraft has high spend but stable effectiveness, with a minor presence in China, while Vedix maintains low spend with slight effectiveness decline but a more diverse international presence.\n 
-    Traya should continue optimizing ad spend and consider international expansion.\n`;
+  const summary = `Traya Health, including both Traya and Traya Hair handles, exhibits notable distinctions in ad performance and spending patterns. Over the past four weeks, Traya shows a significant decline in ad effectiveness, with views per dollar decreasing from over 28 to around 18. In contrast, Traya Hair maintains low effectiveness, with a flat trend around 14-16 views per dollar, despite high and increasing spending, which reaches over $700K by the most recent week.\n
+  SkinKraft maintains stable ad effectiveness around 18-20 views per dollar with a consistent but lower spend compared to Traya Hair. The average spend per creative for SkinKraft is around $20K.\n
+  Vedix has a relatively low spend with a slight decline in effectiveness from around 22 to 18 views per dollar over the past four weeks. Despite this, Vedix has a more diverse international presence, including campaigns in Saudi Arabia, UAE, and the USA.\n
+  Traya's average spend per creative is the highest at over $30K, indicating a focus on quality, whereas Traya Hair's high spending does not translate into high effectiveness.\n
+  Both Traya and Traya Hair exclusively target the Indian market with 965 and 1088 campaigns, respectively. In contrast, SkinKraft has a minor presence in the UAE, and Vedix has a more diverse international presence.\n`
 
-  const summaryLines = summary.split("\n").filter(line => line.trim() !== ''); // Filter out empty lines
+  
+  // Recommendations:
+  //  Traya should investigate the factors causing the decline in ad effectiveness and consider optimizing ad strategies to reverse this trend.
+    // Traya Hair needs to evaluate the effectiveness of its high spending and explore strategies to enhance ad performance.
+    // SkinKraft should explore increasing its ad spend moderately to potentially improve effectiveness while maintaining its stable performance.
+      // Vedix could benefit from analyzing its ad strategies to address the declining effectiveness and further capitalize on its international presence.\n`;
+
+  const summaryLines = summary.split("\n").filter((line) => line.trim() !== ""); // Filter out empty lines
 
   const shortSummary = summaryLines.slice(0, 3).join("\n");
 
@@ -37,7 +43,12 @@ const AdSpend = () => {
         <h2 className="text-2xl font-bold mb-4">Summary</h2>
         <ul className="list-disc list-inside">
           {summaryLines.map((line, index) => (
-            <li key={index} className={`text-base ${index < 3 || showFullSummary ? "" : "hidden"}`}>
+            <li
+              key={index}
+              className={`text-base ${
+                index < 3 || showFullSummary ? "" : "hidden"
+              }`}
+            >
               {line.trim()}
             </li>
           ))}

@@ -38,13 +38,20 @@ Suggestions for Improvement:
    - Improved Scene: Feature other users. "Meet Arjun, who regained his confidence with Traya Health. 'I never thought I'd see such improvement,' he shares, showing his before and after photos."
 
 Relevant Data Insights:
-- Traya Health shows significant improvement in ad effectiveness, increasing from 18 to over 28 views per dollar over four weeks.
-- Despite lower spending compared to SkinKraft, Traya's ads are more efficient.
-- Traya's average spend per creative is the highest at over $25K, indicating a focus on quality.
-- Weekly spend comparison shows Traya maintains a steady spend with increasing effectiveness.
-- Traya exclusively targets the US market with 965 campaigns.
-- SkinKraft has high spend but stable effectiveness, with a minor presence in China.
-- Vedix maintains low spend with slight effectiveness decline but has a more diverse international presence.
+
+- Traya's ad effectiveness declined from 28 to 18 views/dollar over four weeks.
+- Traya Hair's ad effectiveness remained low at 14-16 views/dollar despite spending increasing to $700K.
+- Traya's spending was stable with declining effectiveness.
+- Traya Hair had high, increasing spend with low effectiveness.
+- Traya's average spend per creative is highest at over $30K, indicating a need for content/targeting optimization.
+- Traya Hair's substantial spend is not translating into high returns.
+- Both Traya and Traya Hair exclusively target India (Traya: 965 campaigns, Traya Hair: 1088 campaigns).
+
+Recommendations (Ad Campaigns):
+- Optimize ad strategies to address declining effectiveness.
+- Improve Traya Hair's ad performance despite high spending.
+- Consider international expansion to diversify audience.
+- Ensure high spend translates to engagement and effectiveness.
 
 Conclusion:
 By incorporating visual comparisons and diverse testimonials, Traya Health can enhance its ad’s credibility and engagement, leading to higher customer trust and conversions. Additionally, maintaining the focus on high-quality ad spend and considering international market expansion could further boost Traya Health’s market presence and effectiveness.
@@ -53,7 +60,16 @@ By incorporating visual comparisons and diverse testimonials, Traya Health can e
   const summaryLines = summary.trim().split("\n");
 
   const formatLine = (line, index) => {
-    if (line.startsWith("Executive Summary") || line.startsWith("Overview:") || line.startsWith("Strengths:") || line.startsWith("Weaknesses:") || line.startsWith("Suggestions for Improvement:") || line.startsWith("Relevant Data Insights:") || line.startsWith("Conclusion:")) {
+    if (
+      line.startsWith("Executive Summary") ||
+      line.startsWith("Overview:") ||
+      line.startsWith("Strengths:") ||
+      line.startsWith("Weaknesses:") ||
+      line.startsWith("Suggestions for Improvement:") ||
+      line.startsWith("Relevant Data Insights:") ||
+      line.startsWith("Recommendations (Ad Campaigns):") ||
+      line.startsWith("Conclusion:")
+    ) {
       return (
         <li key={index} className="font-bold mt-4 mb-2">
           {line}
@@ -65,7 +81,7 @@ By incorporating visual comparisons and diverse testimonials, Traya Health can e
           {line.replace("-", "").trim()}
         </li>
       );
-    } else if (line.startsWith("1.") || line.startsWith("2.")) {
+    } else if (line.startsWith("1.") || line.startsWith("2.") || line.startsWith("3.") || line.startsWith("4.") ){
       return (
         <li key={index} className="mt-2">
           {line}
